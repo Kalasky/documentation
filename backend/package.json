@@ -1,0 +1,19 @@
+{
+  "name": "documentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kalasky/documentation.git"
+  },
+  "author": "Kalasky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kalasky/documentation/issues"
+  },
+  "homepage": "https://github.com/Kalasky/documentation#readme"
+}
