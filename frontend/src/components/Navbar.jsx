@@ -17,6 +17,7 @@ import { product, social, about } from '../data/navbarLists'
 // components
 import NavLink from './NavLink'
 import { GlowGreenPrimary, GlowGrayPrimary } from './Buttons'
+import ProductPopover from './ProductPopover'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -56,7 +57,7 @@ const NavBar = () => {
                 <NavLink href="/" text="Home" />
                 <NavLink href="/install" text="Install" />
                 <NavLink href="/community" text="Community" />
-                <NavLink href="/product" text="Product" />
+                <ProductPopover />
                 <NavLink href="/docs" text="Docs" />
                 <NavLink href="/blog" text="Blog" />
               </Popover.Group>

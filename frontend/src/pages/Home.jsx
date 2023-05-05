@@ -269,7 +269,7 @@ DEFINE TABLE post SCHEMALESS
           </div>
         </div>
         <div className="max-md:order-1 max-sm:mt-14 sm:mt-14 lg:mt-0">
-          <CodeBlock code={code1} />
+          <CodeBlock language={'javascript'} code={code1} />
         </div>
       </div>
       <div className="lg:grid lg:grid-cols-2 sm:grid-cols-1 mt-40 gap-6">
@@ -298,7 +298,7 @@ DEFINE TABLE post SCHEMALESS
           </div>
         </div>
         <div className="md:order-1 max-md:order-1 max-sm:mt-14 sm:mt-14 lg:mt-0">
-          <CodeBlock code={code2} />
+          <CodeBlock language={'javascript'} code={code2} />
         </div>
       </div>
       <div className="max-sm:text-left mt-40 m-auto w-fit">

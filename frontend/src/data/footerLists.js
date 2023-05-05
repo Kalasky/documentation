@@ -6,6 +6,7 @@ import {
   faDiscord,
   faRedditAlien,
   faLinkedin,
+  faDev,
 } from '@fortawesome/free-brands-svg-icons'
 
 export const social = [
@@ -16,7 +17,7 @@ export const social = [
   },
   {
     name: 'Twitter',
-    href: 'https://twitter.com/sombrerocult7304',
+    href: '',
     icon: faTwitter,
   },
   {
@@ -43,6 +44,11 @@ export const social = [
     name: 'Reddit',
     href: '',
     icon: faRedditAlien,
+  },
+  {
+    name: 'Dev',
+    href: '',
+    icon: faDev,
   },
 ]
 

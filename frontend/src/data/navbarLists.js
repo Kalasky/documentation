@@ -1,4 +1,5 @@
 import { AcademicCapIcon } from '@heroicons/react/24/outline'
+import { faCircleQuestion, faListCheck, faRocket, faRoad } from '@fortawesome/free-solid-svg-icons'
 
 export const social = [
   {
@@ -8,7 +9,7 @@ export const social = [
   },
   {
     name: 'Twitter',
-    href: 'https://twitter.com/sombrerocult7304',
+    href: '',
     icon: AcademicCapIcon,
   },
   {
@@ -62,6 +63,37 @@ export const product = [
   {
     name: 'Roadmap',
     href: '/roadmap',
+  },
+]
+
+export const productDropdown = [
+  {
+    title: 'Why MongoDB?',
+    icon: faCircleQuestion,
+    href: '/why',
+    iconColor: 'text-white',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  },
+  {
+    title: 'Featuers',
+    icon: faListCheck,
+    href: '/features',
+    iconColor: 'text-white',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit',
+  },
+  {
+    title: 'Releases',
+    icon: faRocket,
+    href: '/releases',
+    iconColor: 'text-white',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  },
+  {
+    title: 'Roadmap',
+    icon: faRoad,
+    href: '/roadmap',
+    iconColor: 'text-white.',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit',
   },
 ]
 
