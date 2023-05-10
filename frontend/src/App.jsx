@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 // components
@@ -10,6 +9,7 @@ import Home from './pages/Home'
 import Community from './pages/Community'
 import Install from './pages/Install'
 import Why from './pages/Why'
+import Roadmap from './pages/Roadmap'
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Route path="/community" element={<Community />} />
         <Route path="/install" element={<Install />} />
         <Route path="/why" element={<Why />} />
+        <Route path="/roadmap" element={<Roadmap />} />
       </Routes>
       <Footer />
     </Router>

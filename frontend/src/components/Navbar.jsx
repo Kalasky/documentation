@@ -42,7 +42,7 @@ const NavBar = () => {
   }, [])
 
   return (
-    <Popover className={`relative globalbg ${isSticky ? 'max-sm:sticky max-sm:top-0 max-sm:z-50 max-sm:glass-overlay' : ''}`}>
+    <Popover className={`relative ${isSticky ? 'max-md:sticky top-0 z-50 glass-overlay sm:bg-transparent' : 'bg-transparent'}`}>
       {({ open }) => (
         <>
           <div className="container mx-auto sm:py-8">
@@ -110,7 +110,7 @@ const NavBar = () => {
                 <Popover.Panel
                   static
                   className={`z-30 absolute top-0 inset-x-0 max-w-3xl mx-auto w-full p-2 transition transform origin-top ${
-                    isSticky ? 'glass-overlay max-md:glass-overlay' : ''
+                    isSticky ? 'glass-overlay' : 'bg-transparent'
                   }`}
                 >
                   <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 globalbg divide-y-2 divide-gray-700">
