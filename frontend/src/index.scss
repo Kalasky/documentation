@@ -151,7 +151,6 @@ body {
   animation: ping 1s infinite;
 }
 
-
 .timeline ul li:nth-child(even):before {
   content: '';
   position: absolute;
@@ -239,4 +238,49 @@ body {
     left: 50px;
     right: inherit;
   }
+}
+
+.sidebar {
+  position: fixed;
+  width: auto;
+  overflow: auto;
+  background: transparent;
+}
+
+.sidebar:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #c5c5c5;
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  list-style: none;
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.sidebar ul li:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 24px;
+  right: -6px;
+  background: rgb(50, 233, 33);
+  border-radius: 50%;
+  animation: ping 1s infinite;
+}
+
+.sidebar ul li.active:before {
+  background: white;
 }

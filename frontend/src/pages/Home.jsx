@@ -81,41 +81,19 @@ DEFINE TABLE post SCHEMALESS
           src={cluster}
           alt="surreal"
           className="hidden xl:block -z-10 relative"
-          style={{ maxWidth: '517px', right: '62px' }}
+          style={{ maxWidth: '517px', right: '62px', top: '-6.8125' }}
         />
-      </div>
-      <div className="sm:text-center max:sm-text-left mt-40 lg:w-8/12 m-auto">
-        <p className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
-          Why use SurrealDB?
-        </p>
-        <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">
-          SurrealDB is an innovative NewSQL cloud database, suitable for serverless applications, jamstack applications,
-          single-page applications, and traditional applications. It is unmatched in its versatility and financial value, with the
-          ability for deployment on cloud, on-premise, embedded, and edge computing environments. For a hassle-free setup, get
-          started with SurrealDB Cloud in one-click.
-        </p>
-        <div className="mt-5 text-base sm:space-x-8 space-y-5">
-          <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
-            Jamstack apps
-            <FontAwesomeIcon icon={faArrowRight} className="ml-4 text-green-500" />
-          </GlowGrayPrimary>
-          <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
-            Serverless apps
-            <FontAwesomeIcon icon={faArrowRight} className="ml-4 text-green-500" />
-          </GlowGrayPrimary>
-        </div>
       </div>
       <div className="grid xl:grid-cols-3 sm:grid-cols-1 mt-20 gap-6">
         <div className="cardbg-color shadow-xl rounded-2xl">
           <div className="text-white text-lg font-bold p-10">
             <div className="text-xl flex">
               <ShieldCheckIcon className="text-green-500 h-6 mr-4" />
-              <span>Scale quicker</span>
+              <span>Atlas</span>
             </div>
             <p className="mt-6 font-light text-base text-gray-400">
-              Forget about scaling databases, servers, loadbalancers, and API endpoints. SurrealDB takes the hassle out of your
-              stack, enabling you to grow and operate at scale with a highly-available, highly-scalable distributed platform.
-              Deploy anywhere, or keep it simple with SurrealDB Cloud.
+              MongoDB Atlas is a multi-cloud developer data platform that provides the database and data services that accelerate
+              and simplify how you build with data. Available on AWS, Google Cloud, and Microsoft Azure.
             </p>
           </div>
         </div>
@@ -324,7 +302,10 @@ DEFINE TABLE post SCHEMALESS
         </div>
       </div>
       <div className="sm:text-center max:sm-text-left mt-40 lg:w-8/12 m-auto">
-        <p className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
+        <p
+          className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text"
+          style={{ lineHeight: '3.5rem' }}
+        >
           We are building MongoDB for everyone
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">

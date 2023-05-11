@@ -6,7 +6,7 @@ import Timeline from '../components/Timeline'
 
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDiamond } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faCode } from '@fortawesome/free-solid-svg-icons'
 
 // assets
 import mongoroadmap from '../assets/mongoroadmap.png'
@@ -42,6 +42,27 @@ const Roadmap = () => {
         SurrealDB Roadmap
       </p>
       <Timeline />
+      <div className="sm:text-center max:sm-text-left mt-40 lg:w-8/12 m-auto">
+        <p
+          className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text"
+          style={{ lineHeight: '3.5rem' }}
+        >
+          We are building MongoDB for everyone
+        </p>
+        <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">
+          MongoDB is being built in the open. We would love for you to be involved.
+        </p>
+        <div className="mt-5 text-base sm:space-x-8 space-y-5">
+          <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
+            <FontAwesomeIcon icon={faStar} className="mr-2 text-green-500" />
+            Star us on GitHub
+          </GlowGrayPrimary>
+          <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
+            <FontAwesomeIcon icon={faCode} className="mr-2 text-green-500" />
+            View our open source projects
+          </GlowGrayPrimary>
+        </div>
+      </div>
     </div>
   )
 }

@@ -10,6 +10,7 @@ import Community from './pages/Community'
 import Install from './pages/Install'
 import Why from './pages/Why'
 import Roadmap from './pages/Roadmap'
+import Features from './pages/Features'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/install" element={<Install />} />
         <Route path="/why" element={<Why />} />
         <Route path="/roadmap" element={<Roadmap />} />
+        <Route path="/features" element={<Features />} />
       </Routes>
       <Footer />
     </Router>

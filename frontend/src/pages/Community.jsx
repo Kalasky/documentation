@@ -123,7 +123,10 @@ const Community = () => {
         </div>
       </div>
       <div className="sm:text-center max:sm-text-left mt-40 lg:w-8/12 m-auto">
-        <p className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
+        <p
+          className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text"
+          style={{ lineHeight: '3.5rem' }}
+        >
           We are building MongoDB for everyone
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">

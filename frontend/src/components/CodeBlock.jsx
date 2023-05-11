@@ -22,6 +22,7 @@ export const CodeBlock = ({ language, code }) => {
   )
 }
 
+// used for adding inline code snippets to text and such
 export const InlineBashCode = ({ code }) => {
   return (
     <span className="inline-block bg-gray-800 rounded-md px-2 py-1 text-base font-medium text-gray-200">
