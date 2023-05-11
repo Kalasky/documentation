@@ -11,6 +11,11 @@ import Install from './pages/Install'
 import Why from './pages/Why'
 import Roadmap from './pages/Roadmap'
 import Features from './pages/Features'
+import ContentPage from './pages/ContentPage'
+import ContentPreview from './pages/ContentPreview'
+import NotFound from './pages/404'
+import Docs from './pages/Docs'
+import Releases from './pages/Releases'
 
 function App() {
   return (
@@ -23,6 +28,11 @@ function App() {
         <Route path="/why" element={<Why />} />
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/features" element={<Features />} />
+        <Route path="/blog/:id" element={<ContentPage />} />
+        <Route path="/blog" element={<ContentPreview />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/docs" element={<Docs />} />
+        <Route path="/releases" element={<Releases />} />
       </Routes>
       <Footer />
     </Router>

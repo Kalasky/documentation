@@ -37,7 +37,7 @@ const Sidebar = ({ entries, isVisible }) => {
   }, [entries, isVisible])
 
   return (
-    <div className="sidebar max-lg:hidden" style={{ position: 'sticky', top: '10rem' }}>
+    <div className="sidebar max-lg:hidden" style={{ position: 'sticky', top: '5rem' }}>
       <ul>
         {entries.map((entry, index) => (
           <li key={index} className={index === activeIndex ? 'active' : ''}>
@@ -50,7 +50,7 @@ const Sidebar = ({ entries, isVisible }) => {
               duration={200}
               onSetActive={() => handleSetActive(index)}
             >
-              <div className="text-white cursor-pointer">{entry.title}</div>
+              <div className="text-gray-400 cursor-pointer">{entry.title}</div>
             </ScrollLink>
           </li>
         ))}
