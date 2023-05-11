@@ -58,7 +58,7 @@ const Features = () => {
           style={{ maxWidth: '69.8125rem', right: '6.375rem', top: '-6.8125rem', height: '33.875rem' }}
         />
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 max-lg:grid-cols-2 gap-4">
         <div className="col-span-1" style={{ position: 'sticky' }}>
           <Sidebar entries={entries} isVisible={true} />
         </div>

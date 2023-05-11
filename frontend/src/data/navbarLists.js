@@ -75,7 +75,7 @@ export const productDropdown = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
   },
   {
-    title: 'Featuers',
+    title: 'Features',
     icon: faListCheck,
     href: '/features',
     iconColor: 'text-white',
