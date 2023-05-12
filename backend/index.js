@@ -3,6 +3,7 @@ const contentful = require('contentful')
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const path = require('path')
 
 // middleware
 app.use(cors())
@@ -74,6 +75,14 @@ app.get('/releases/:id', async (req, res) => {
   } catch (error) {
     return res.status(404).send('Not found')
   }
+})
+
+// Serve static files from the React app
+app.use(express.static(path.resolve(__dirname, '../frontend/dist')))
+
+// Catch-all route to handle requests for non-existent routes
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'))
 })
 
 // this is a catch all if none of the routes above match
