@@ -16,9 +16,9 @@ const Community = () => {
           Install MongoDB
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">
-          There are a number of ways of running SurrealDB. It can either be installed from a binary image, or it can be run from
-          within Docker. Once installed, the <InlineBashCode code={'surreal'} /> command is a single executable which can be used
-          to backup, interact with, and run SurrealDB server instances.
+          There are a number of ways of running MongoDB. It can either be installed from a binary image, or it can be run from
+          within Docker. Once installed, the <InlineBashCode code={'mongo'} /> command is a single executable which can be used
+          to backup, interact with, and run MongoDB server instances.
         </p>
       </div>
       <div className="sm:text-center max:sm-text-left lg:w-8/12 m-auto mt-32">
@@ -26,9 +26,9 @@ const Community = () => {
           <FontAwesomeIcon icon={faApple} className="mr-2 text-white" /> Install on macOS
         </p>
         <p className="text-gray-400 text-base mt-5 mb-5 lg:w-5/6 m-auto">
-          The quickest way to get going with SurrealDB on macOS is to use Homebrew. This will install both the command-line tools,
-          and the SurrealDB server as a single executable. If you don't use Homebrew, follow the instructions for Linux below to
-          install SurrealDB. View the documentation or more information.
+          The quickest way to get going with MongoDB on macOS is to use Homebrew. This will install both the command-line tools,
+          and the MongoDB server as a single executable. If you don't use Homebrew, follow the instructions for Linux below to
+          install MongoDB. View the documentation or more information.
         </p>
         <CodeBlock language={'bash'} code={'brew tap mongodb/brew'} />
       </div>
@@ -37,7 +37,7 @@ const Community = () => {
           <FontAwesomeIcon icon={faLinux} className="mr-2 text-white" /> Install on Linux
         </p>
         <p className="text-gray-400 text-base mt-5 mb-5 lg:w-5/6 m-auto">
-          The easiest and preferred way to get going with SurrealDB on Unix operating systems is to install and use the SurrealDB
+          The easiest and preferred way to get going with MongoDB on Unix operating systems is to install and use the MongoDB
           command-line tool. Run the following command in your terminal and follow the on-screen instructions. View the
           documentation or more information.
         </p>
@@ -48,18 +48,18 @@ const Community = () => {
           <FontAwesomeIcon icon={faWindows} className="mr-2 text-white" /> Install on Windows
         </p>
         <p className="text-gray-400 text-base mt-5 mb-5 lg:w-5/6 m-auto">
-          The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line
+          The easiest and preferred way to get going with MongoDB on Windows is to install and use the MongoDB command-line
           tool. Run the following command in your terminal and follow the on-screen instructions. View the documentation or more
           information.
         </p>
         <CodeBlock language={'bash'} code={'brew tap mongodb/brew'} />
         <p className="text-gray-400 text-base mt-5 mb-5 lg:w-5/6 m-auto">
-          Alternatively SurrealDB is available for installation, on Windows, via the Scoop package manager, from an administrative
+          Alternatively MongoDB is available for installation, on Windows, via the Scoop package manager, from an administrative
           shell - enabling easy installation and upgrading.
         </p>
         <CodeBlock language={'bash'} code={'brew tap mongodb/brew'} />
         <p className="text-gray-400 text-base mt-5 mb-5 lg:w-5/6 m-auto">
-          The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line
+          The easiest and preferred way to get going with MongoDB on Windows is to install and use the MongoDB command-line
           tool. Run the following command in your terminal and follow the on-screen instructions. View the documentation or more
           information.
         </p>
@@ -70,11 +70,11 @@ const Community = () => {
           Run using Docker
         </p>
         <p className="text-gray-400 text-base mt-5 mb-5 lg:w-5/6 m-auto">
-          Docker can be used to manage and run SurrealDB database instances without the need to install any command-line tools.
-          The SurrealDB docker container contains the full command-line tools for importing and exporting data from a running
+          Docker can be used to manage and run MongoDB database instances without the need to install any command-line tools.
+          The MongoDB docker container contains the full command-line tools for importing and exporting data from a running
           server, or for running a server itself. View the documentation or more information.
         </p>
-        <CodeBlock language={'bash'} code={'docker run --rm --pull always -p 8000:8000 surrealdb/surrealdb:latest start'} />
+        <CodeBlock language={'bash'} code={'docker run --rm --pull always -p 8000:8000 MongoDB/MongoDB:latest start'} />
       </div>
     </div>
   )

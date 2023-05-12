@@ -20,11 +20,11 @@ const Roadmap = () => {
             Roadmap
           </p>
           <p className="text-gray-400 text-lg mt-5 lg:w-11/12">
-            SurrealDB has been built from the ground up to be the ultimate database for developers who want to build tomorrow's
-            applications. On this page you can keep track of what we have planned for SurrealDB..
+            MongoDB has been built from the ground up to be the ultimate database for developers who want to build tomorrow's
+            applications. On this page you can keep track of what we have planned for MongoDB..
           </p>
           <p className="text-gray-400 text-lg mt-5 lg:w-11/12">
-            If you have an idea for SurrealDB, then we would love to hear from you.
+            If you have an idea for MongoDB, then we would love to hear from you.
           </p>
           <div className="mt-10 text-base space-y-5">
             <GlowGrayPrimary
@@ -38,13 +38,13 @@ const Roadmap = () => {
         </div>
         <img
           src={mongoroadmap}
-          alt="surreal"
+          alt="mongo"
           className="hidden xl:block -z-10 relative"
           style={{ maxWidth: '540px', right: '62px' }}
         />
       </div>
       <p className="sm:mt-40 max-sm:mt-20 text-center font-bold xl:text-6xl md:text-5xl max-sm:text-4xl max-lg:text-4xl lg:w-full bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
-        SurrealDB Roadmap
+        MongoDB Roadmap
       </p>
       <Timeline />
       <div className="sm:text-center max:sm-text-left mt-40 lg:w-8/12 m-auto">

@@ -135,7 +135,7 @@ console.log(result);
         </div>
         <img
           src={documentation_hero}
-          alt="surreal"
+          alt="mongo"
           className="hidden xl:block -z-10 relative"
           style={{ maxWidth: '69.8125rem', right: '6.375rem', top: '-6.8125rem', height: '33.875rem' }}
         />
@@ -231,14 +231,14 @@ console.log(result);
             <div className="sm:col-span-1 max-sm:col-span-2">
               <FeatureCell
                 title="Introduction"
-                description="SurrealDB is a web database that allows you to store and query data directly from your client-side applications.  easy-to-use interface for your data."
+                description="MongoDB is a web database that allows you to store and query data directly from your client-side applications.  easy-to-use interface for your data."
                 badge={'planned'}
               />
             </div>
             <div className="sm:col-span-1 max-sm:col-span-2">
               <FeatureCell
                 title="Introduction"
-                description="SurrealDB is a web database that allows you to store and query data directly from your client-side applications.  easy-to-use interface for your data."
+                description="MongoDB is a web database that allows you to store and query data directly from your client-side applications.  easy-to-use interface for your data."
                 badge={'planned'}
               />
             </div>

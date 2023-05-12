@@ -19,7 +19,7 @@ const Why = () => {
           A highly-scalable NewSQL database
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">
-          SurrealDB is a flexible, developer-friendly, fully ACID transactional, realtime document-graph web database for
+          MongoDB is a flexible, developer-friendly, fully ACID transactional, realtime document-graph web database for
           serverless applications. Never again worry about database provisioning, scaling, sharding, replication, or correctness.
         </p>
       </div>
@@ -28,73 +28,73 @@ const Why = () => {
           title="Scale quicker"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="Forget about scaling databases, servers, loadbalancers, and API endpoints. SurrealDB takes the hassle out of your stack, enabling you to grow and operate at scale with a highly-available, highly-scalable distributed platform. Deploy anywhere, or keep it simple with SurrealDB Cloud."
+          description="Forget about scaling databases, servers, loadbalancers, and API endpoints. MongoDB takes the hassle out of your stack, enabling you to grow and operate at scale with a highly-available, highly-scalable distributed platform. Deploy anywhere, or keep it simple with MongoDB Cloud."
         />
         <FeatureCard
           title="Develop easier"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="There is no need for your team to learn new complicated database languages. Getting started with SurrealDB is as simple as one command - and advanced functionality is simple to understand, whilst still being fast and performant."
+          description="There is no need for your team to learn new complicated database languages. Getting started with MongoDB is as simple as one command - and advanced functionality is simple to understand, whilst still being fast and performant."
         />
         <FeatureCard
           title="Build faster"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="SurrealDB simplifies your database and API stack, removing the need for most server-side components. As a web database, client-side applications can be built with direct connections to SurrealDB, while traditional server-side development techniques can still leverage the powerful but simple querying and analytics abilities."
+          description="MongoDB simplifies your database and API stack, removing the need for most server-side components. As a web database, client-side applications can be built with direct connections to MongoDB, while traditional server-side development techniques can still leverage the powerful but simple querying and analytics abilities."
         />
         <FeatureCard
           title="Scale quicker"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="Forget about scaling databases, servers, loadbalancers, and API endpoints. SurrealDB takes the hassle out of your stack, enabling you to grow and operate at scale with a highly-available, highly-scalable distributed platform. Deploy anywhere, or keep it simple with SurrealDB Cloud."
+          description="Forget about scaling databases, servers, loadbalancers, and API endpoints. MongoDB takes the hassle out of your stack, enabling you to grow and operate at scale with a highly-available, highly-scalable distributed platform. Deploy anywhere, or keep it simple with MongoDB Cloud."
         />
         <FeatureCard
           title="Develop easier"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="There is no need for your team to learn new complicated database languages. Getting started with SurrealDB is as simple as one command - and advanced functionality is simple to understand, whilst still being fast and performant."
+          description="There is no need for your team to learn new complicated database languages. Getting started with MongoDB is as simple as one command - and advanced functionality is simple to understand, whilst still being fast and performant."
         />
         <FeatureCard
           title="Build faster"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="SurrealDB simplifies your database and API stack, removing the need for most server-side components. As a web database, client-side applications can be built with direct connections to SurrealDB, while traditional server-side development techniques can still leverage the powerful but simple querying and analytics abilities."
+          description="MongoDB simplifies your database and API stack, removing the need for most server-side components. As a web database, client-side applications can be built with direct connections to MongoDB, while traditional server-side development techniques can still leverage the powerful but simple querying and analytics abilities."
         />
         <FeatureCard
           title="Scale quicker"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="Forget about scaling databases, servers, loadbalancers, and API endpoints. SurrealDB takes the hassle out of your stack, enabling you to grow and operate at scale with a highly-available, highly-scalable distributed platform. Deploy anywhere, or keep it simple with SurrealDB Cloud."
+          description="Forget about scaling databases, servers, loadbalancers, and API endpoints. MongoDB takes the hassle out of your stack, enabling you to grow and operate at scale with a highly-available, highly-scalable distributed platform. Deploy anywhere, or keep it simple with MongoDB Cloud."
         />
         <FeatureCard
           title="Develop easier"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="There is no need for your team to learn new complicated database languages. Getting started with SurrealDB is as simple as one command - and advanced functionality is simple to understand, whilst still being fast and performant."
+          description="There is no need for your team to learn new complicated database languages. Getting started with MongoDB is as simple as one command - and advanced functionality is simple to understand, whilst still being fast and performant."
         />
         <FeatureCard
           title="Build faster"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="SurrealDB simplifies your database and API stack, removing the need for most server-side components. As a web database, client-side applications can be built with direct connections to SurrealDB, while traditional server-side development techniques can still leverage the powerful but simple querying and analytics abilities."
+          description="MongoDB simplifies your database and API stack, removing the need for most server-side components. As a web database, client-side applications can be built with direct connections to MongoDB, while traditional server-side development techniques can still leverage the powerful but simple querying and analytics abilities."
         />
         <FeatureCard
           title="Scale quicker"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="Forget about scaling databases, servers, loadbalancers, and API endpoints. SurrealDB takes the hassle out of your stack, enabling you to grow and operate at scale with a highly-available, highly-scalable distributed platform. Deploy anywhere, or keep it simple with SurrealDB Cloud."
+          description="Forget about scaling databases, servers, loadbalancers, and API endpoints. MongoDB takes the hassle out of your stack, enabling you to grow and operate at scale with a highly-available, highly-scalable distributed platform. Deploy anywhere, or keep it simple with MongoDB Cloud."
         />
         <FeatureCard
           title="Develop easier"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="There is no need for your team to learn new complicated database languages. Getting started with SurrealDB is as simple as one command - and advanced functionality is simple to understand, whilst still being fast and performant."
+          description="There is no need for your team to learn new complicated database languages. Getting started with MongoDB is as simple as one command - and advanced functionality is simple to understand, whilst still being fast and performant."
         />
         <FeatureCard
           title="Build faster"
           IconComponent={ShieldCheckIcon}
           iconColor="text-green-500"
-          description="SurrealDB simplifies your database and API stack, removing the need for most server-side components. As a web database, client-side applications can be built with direct connections to SurrealDB, while traditional server-side development techniques can still leverage the powerful but simple querying and analytics abilities."
+          description="MongoDB simplifies your database and API stack, removing the need for most server-side components. As a web database, client-side applications can be built with direct connections to MongoDB, while traditional server-side development techniques can still leverage the powerful but simple querying and analytics abilities."
         />
       </div>
       <div className="sm:text-center max:sm-text-left mt-40 lg:w-8/12 m-auto">

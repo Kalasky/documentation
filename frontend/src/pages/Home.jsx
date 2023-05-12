@@ -62,14 +62,14 @@ DEFINE TABLE post SCHEMALESS
       <div className="grid grid-flow-row-dense xl:grid-cols-3 sm:grid-cols-1">
         <div id="text-section" className="col-span-2">
           <p className="font-bold xl:text-6xl md:text-5xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
-            SurrealDB is the ultimate multi-model database for tomorrow's applications
+            MongoDB is the ultimate multi-model database for tomorrow's applications
           </p>
           <p className="mt-5 sm:text-3xl max-sm:text-2xl text-white text font-bold">
             Develop easier. Build faster. Scale quicker.
           </p>
           <p className="text-gray-400 text-lg mt-5 lg:w-11/12">
             With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security
-            permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next generation
+            permissions for multi-tenant access, and support for performant analytical workloads, MongoDB is the next generation
             serverless database.
           </p>
           <div className="mt-10 text-base space-y-5">
@@ -90,7 +90,7 @@ DEFINE TABLE post SCHEMALESS
         </div>
         <img
           src={cluster}
-          alt="surreal"
+          alt="mongo"
           className="hidden xl:block -z-10 relative"
           style={{ maxWidth: '517px', right: '62px', top: '-6.8125' }}
         />
@@ -115,7 +115,7 @@ DEFINE TABLE post SCHEMALESS
               <span>Develop easier</span>
             </div>
             <p className="mt-6 font-light text-base text-gray-400">
-              There is no need for your team to learn new complicated database languages. Getting started with SurrealDB is as
+              There is no need for your team to learn new complicated database languages. Getting started with MongoDB is as
               simple as one command - and advanced functionality is simple to understand, whilst still being fast and performant.
             </p>
           </div>
@@ -127,8 +127,8 @@ DEFINE TABLE post SCHEMALESS
               <span>Build faster</span>
             </div>
             <p className="mt-6 font-light text-base text-gray-400">
-              SurrealDB simplifies your database and API stack, removing the need for most server-side components. As a web
-              database, client-side applications can be built with direct connections to SurrealDB, while traditional server-side
+              MongoDB simplifies your database and API stack, removing the need for most server-side components. As a web
+              database, client-side applications can be built with direct connections to MongoDB, while traditional server-side
               development techniques can still leverage the powerful but simple querying and analytics abilities.
             </p>
           </div>
@@ -179,13 +179,13 @@ DEFINE TABLE post SCHEMALESS
       </div>
       <div className="sm:text-center max:sm-text-left mt-40 lg:w-8/12 m-auto">
         <p className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
-          Why use SurrealDB?
+          Why use MongoDB?
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-full m-auto">
-          SurrealDB is an innovative NewSQL cloud database, suitable for serverless applications, jamstack applications,
+          MongoDB is an innovative NewSQL cloud database, suitable for serverless applications, jamstack applications,
           single-page applications, and traditional applications. It is unmatched in its versatility and financial value, with the
           ability for deployment on cloud, on-premise, embedded, and edge computing environments. For a hassle-free setup, get
-          started with SurrealDB Cloud in one-click.
+          started with MongoDB Cloud in one-click.
         </p>
       </div>
       <div className="mt-20">
@@ -244,9 +244,9 @@ DEFINE TABLE post SCHEMALESS
         <div className="m-auto max-md:order-2">
           <p className="font-bold md:text-3xl max-sm:text-3xl max-lg:text-4xl lg:w-11/12 text-white">Improved data modelling</p>
           <p className="mt-6 font-light text-base text-gray-400 leading-7">
-            SurrealDB doesn't force you into setting up your data model in any one way. Instead you can choose between simple
+            MongoDB doesn't force you into setting up your data model in any one way. Instead you can choose between simple
             documents, documents with embedded fields, or related graph connections between records. Use schemafull or schemaless
-            tables giving you the flexibility to store whatever you need. <br /> <br /> Once stored in SurrealDB, all data is
+            tables giving you the flexibility to store whatever you need. <br /> <br /> Once stored in MongoDB, all data is
             strongly typed, with the ability to convert between different types seamlessly - and numbers can be stored and
             computed with 64 bit precision or as arbitrary length decimals.
           </p>
@@ -277,9 +277,9 @@ DEFINE TABLE post SCHEMALESS
         <div className="m-auto md:order-2 max-md:order-2">
           <p className="font-bold md:text-3xl max-sm:text-3xl max-lg:text-4xl lg:w-11/12 text-white">Improved data modelling</p>
           <p className="mt-6 font-light text-base text-gray-400 leading-7">
-            SurrealDB doesn't force you into setting up your data model in any one way. Instead you can choose between simple
+            MongoDB doesn't force you into setting up your data model in any one way. Instead you can choose between simple
             documents, documents with embedded fields, or related graph connections between records. Use schemafull or schemaless
-            tables giving you the flexibility to store whatever you need. <br /> <br /> Once stored in SurrealDB, all data is
+            tables giving you the flexibility to store whatever you need. <br /> <br /> Once stored in MongoDB, all data is
             strongly typed, with the ability to convert between different types seamlessly - and numbers can be stored and
             computed with 64 bit precision or as arbitrary length decimals.
           </p>

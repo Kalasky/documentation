@@ -16,6 +16,7 @@ import ContentPreview from './pages/ContentPreview'
 import NotFound from './pages/404'
 import Docs from './pages/Docs'
 import Releases from './pages/Releases'
+import ReleasesPage from './pages/ReleasesPage'
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/docs" element={<Docs />} />
         <Route path="/releases" element={<Releases />} />
-        <Route path="/releases:id" element={<Releases />} />
+        <Route path="/releases/:id" element={<ReleasesPage />} />
       </Routes>
       <Footer />
     </Router>

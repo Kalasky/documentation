@@ -33,8 +33,8 @@ const Community = () => {
           MongoDB Community
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">
-          Join our community of maintainers, contributors, users, and surreal enthusiasts and help us make SurrealDB better for
-          developers and organisations all around the world. If you have questions using SurrealDB, or if you have ideas on how to
+          Join our community of maintainers, contributors, users, and mongo enthusiasts and help us make MongoDB better for
+          developers and organisations all around the world. If you have questions using MongoDB, or if you have ideas on how to
           make it better we would love to hear from you.
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">
@@ -55,25 +55,25 @@ const Community = () => {
       <div className="grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mt-20 gap-6">
         <SocialCard
           title="GitHub"
-          description="Star the SurrealDB repository on Github and keep track of development. Got a feature request, or found a bug? Then submit an issue on Github."
+          description="Star the MongoDB repository on Github and keep track of development. Got a feature request, or found a bug? Then submit an issue on Github."
           icon={faGithub}
           iconColor="text-white"
         />
         <SocialCard
           title="Discord"
-          description="Join the community on Discord. Suggest ideas, get answers to questions, stay up-to-date with releases, and showcase your product built on SurrealDB."
+          description="Join the community on Discord. Suggest ideas, get answers to questions, stay up-to-date with releases, and showcase your product built on MongoDB."
           icon={faDiscord}
           iconColor="text-indigo-500"
         />
         <SocialCard
           title="Twitter"
-          description="Follow us on Twitter for product updates and releases. We'll also showcase bits of the code and other products built on top of SurrealDB."
+          description="Follow us on Twitter for product updates and releases. We'll also showcase bits of the code and other products built on top of MongoDB."
           icon={faTwitter}
           iconColor="text-blue-500"
         />
         <SocialCard
           title="Linkedin"
-          description="Follow us on LinkedIn for product updates and releases, webinars, and for tips and tricks on using SurrealDB in your organisation."
+          description="Follow us on LinkedIn for product updates and releases, webinars, and for tips and tricks on using MongoDB in your organisation."
           icon={faLinkedin}
           iconColor="text-blue-600"
         />
@@ -85,19 +85,19 @@ const Community = () => {
         />
         <SocialCard
           title="Reddit"
-          description="Join our subreddit for discussions, feedback, and sharing your experiences with SurrealDB."
+          description="Join our subreddit for discussions, feedback, and sharing your experiences with MongoDB."
           icon={faReddit}
           iconColor="text-orange-500"
         />
         <SocialCard
           title="Stack Overflow"
-          description="Ask and answer technical questions about SurrealDB on Stack Overflow."
+          description="Ask and answer technical questions about MongoDB on Stack Overflow."
           icon={faStackOverflow}
           iconColor="text-yellow-500"
         />
         <SocialCard
           title="Dev.to"
-          description="Read and share articles on the DEV Community about SurrealDB, its use cases, and best practices."
+          description="Read and share articles on the DEV Community about MongoDB, its use cases, and best practices."
           icon={faDev}
           iconColor="text-black"
         />

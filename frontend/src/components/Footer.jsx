@@ -28,7 +28,7 @@ const Footer = () => {
 
             <p className="max-w-full mt-4 text-sm text-white">
               With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security
-              permissions for multi-tenant access, and support for performant analytical workloads, SurrealDB is the next
+              permissions for multi-tenant access, and support for performant analytical workloads, MongoDB is the next
               generation serverless database.
             </p>
             <p className="space-x-4 text-3xl mt-6">
