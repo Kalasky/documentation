@@ -6,6 +6,11 @@ const client = contentful.createClient({
 })
 
 module.exports = async (req, res) => {
-  const entries = await client.getEntries({ content_type: 'mongoDocs' })
-  res.json(entries.items)
+  try {
+    const entries = await client.getEntries({ content_type: 'mongoDocs' })
+    res.json(entries.items)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: 'Error fetching data from Contentful' })
+  }
 }
