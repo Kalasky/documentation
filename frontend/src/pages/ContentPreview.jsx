@@ -82,7 +82,7 @@ const Content = () => {
                   <div className="text-white text-lg font-bold p-10 cardbg-color rounded-b-2xl">
                     <div className="text-xl flex">{content.fields.title}</div>
                     {/* Converting description to react component to render it, due to the fact that it is a rich text field */}
-                    <div className="line-clamp-5">
+                    <div className="line-clamp">
                       {description.nodeType ? documentToReactComponents(description, options) : description}
                     </div>
                     {/* Checking if the image exists */}
