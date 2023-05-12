@@ -4,8 +4,11 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Link } from 'react-router-dom'
 import '../index.scss'
 
+// assets
+import loader from '../assets/loader.svg'
+
 // components
-import { GlowGreenPrimary } from '../components/Buttons'
+import { GlowGreenPrimary, GlowGrayPrimary } from '../components/Buttons'
 import Sidebar from '../components/docs/Sidebar'
 
 // Custom options for rendering rich text
@@ -114,11 +117,19 @@ const options = {
 
 const Releases = () => {
   const [content, setContent] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [isTimeout, setIsTimeout] = useState(false)
+  const [fetchError, setFetchError] = useState(false)
+  const [retryCount, setRetryCount] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
   const postsPerPage = 6
   const [entries, setEntries] = useState([])
 
-  useEffect(() => {
+  const handleRefresh = () => {
+    window.location.reload()
+  }
+
+  const fetchContent = () => {
     fetch('/api/releases')
       .then((res) => res.json())
       .then((data) => {
@@ -126,7 +137,8 @@ const Releases = () => {
           console.log('Description for content', content.sys.id, ':', content)
         })
         setContent(data)
-
+        setIsLoading(false)
+        setFetchError(false)
         // extract entries for sidebar
         const entries = data.map((content) => {
           const elements = content.fields.description.content
@@ -141,13 +153,81 @@ const Releases = () => {
         })
       })
       .catch((err) => console.error(err))
-  }, [])
+  }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (isLoading) {
+        setIsTimeout(true)
+      }
+    }, 5000)
+
+    fetchContent()
+
+    return () => clearTimeout(timer)
+  }, [isLoading])
+
+  useEffect(() => {
+    if (fetchError && retryCount < 3) {
+      // retry fetching the data up to 3 times
+      setRetryCount(retryCount + 1)
+      const retryTimer = setTimeout(fetchContent, 3000) // retry after 3 seconds
+      return () => clearTimeout(retryTimer)
+    }
+  }, [fetchError])
 
   const handleReadMore = () => {
     setCurrentPage(currentPage + 1)
   }
 
   const displayedContent = content.slice(0, currentPage * postsPerPage)
+
+  if (isLoading && !isTimeout) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <img src={loader} alt="loader" />
+      </div>
+    )
+  }
+
+  //  if the data is not fetched after 5 seconds, let the user know
+  if (isTimeout && isLoading) {
+    return (
+      <div className="container m-auto">
+        <div className="text-5xl text-center text-white font-bold mb-12 align-middle mt-24">Uh Oh!</div>
+        <div className="flex justify-center items-center font-semibold text-xl text-center m-auto text-white">
+          Loading is taking longer than usual. Please check your network connection.
+        </div>
+        <div className="mt-20 m-auto">
+          <p
+            className="text-center m-auto font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl bg-gradient-to-r from-green-400 to-white text-transparent bg-clip-text"
+            style={{ lineHeight: '3.5rem' }}
+          >
+            Engine noises
+          </p>
+          <p className="text-gray-400 text-base mt-5 m-auto text-center">
+            If the issues persists please contact an administrator.
+          </p>
+          <div className="m-auto text-center mt-10 text-base sm:space-x-8 space-y-5">
+            <GlowGrayPrimary onClick={() => handleRefresh()} padding={'px-4 py-3'}>
+              Refresh Page
+            </GlowGrayPrimary>
+            <span className="max-sm:mt-5 max-sm:block"></span>
+            <Link to="/">
+              <GlowGrayPrimary onClick={() => {}} padding={'px-4 py-3'}>
+                Go back home
+              </GlowGrayPrimary>
+            </Link>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // if the data is fetched but there is no content, let the user know
+  if (!content) {
+    return <div className="flex justify-center items-center h-screen">Something went wrong. Please try again later.</div>
+  }
 
   return (
     <div>

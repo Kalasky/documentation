@@ -225,9 +225,6 @@ const ContentPage = () => {
     return <div className="flex justify-center items-center h-screen">Something went wrong. Please try again later.</div>
   }
 
-  // Checking if the image exists
-  const imageUrl = content.fields.media ? 'https:' + content.fields.media.fields.file.url : null
-
   return (
     <div key={content.sys.id}>
       <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" style={{ fontFamily: 'Poppins' }}>
@@ -236,11 +233,6 @@ const ContentPage = () => {
             <Sidebar entries={entries} isVisible={true} />
           </div>
           <div className="shadow-2x1 rounded-2xl cardbg-color col-span-2 max-lg:col-span-3">
-            <div className="bg-slate-800 text-white text-lg font-bold rounded-t-2xl h-80 flex items-center justify-center">
-              <div className="blog-image-container">
-                {imageUrl && <img className="blog-image rounded-t-2xl" src={imageUrl} alt={content.fields.media.fields.title} />}
-              </div>
-            </div>
             <div className="text-white text-lg font-bold p-10 cardbg-color rounded-b-2xl">
               <div className="text-xl flex">{content.fields.title}</div>
               {/* Converting description to react component to render it, due to the fact that it is a rich text field */}
