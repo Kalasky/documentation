@@ -10,10 +10,10 @@ module.exports = async (req, res) => {
   try {
     const entry = await client.getEntry(id)
     if (!entry) {
-      return res.status(404).send('Not found')
+      return res.status(404).json({ message: 'Entry not found', id })
     }
     res.json(entry)
   } catch (error) {
-    return res.status(404).send('Not found')
+    return res.status(500).json({ message: 'Internal server error', error: error.message })
   }
 }

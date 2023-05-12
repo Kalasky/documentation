@@ -129,8 +129,7 @@ const ContentPage = () => {
   }
 
   const fetchContent = () => {
-    console.log(process.env.REACT_APP_API_DOMAIN)
-    fetch(`https://documentation-git-main-kalasky.vercel.app/api/blog/${id}`)
+    fetch(`/api/blog/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
