@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../index.scss'
 
@@ -18,12 +18,32 @@ import { mediaCards } from '../data/mediaCards'
 
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faCode, faListCheck, faStar, faMagicWandSparkles } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faCode, faListCheck, faStar, faMagicWandSparkles, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
 // heroicons
 import { ShieldCheckIcon } from '@heroicons/react/24/outline'
 
+// utils
+import { scrollToSection } from '../utils/scroll'
+
 const Home = () => {
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 300) {
+        setShowBackToTop(true)
+      } else {
+        setShowBackToTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   const code1 = `
 -- Specify access permissions for the 'post' table
 DEFINE TABLE post SCHEMALESS
@@ -58,7 +78,17 @@ DEFINE TABLE post SCHEMALESS
   KILL "1986cc4e-340a-467d-9290-de81583267a2";
   `
   return (
-    <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" style={{ fontFamily: 'Poppins' }}>
+    <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" id="top" style={{ fontFamily: 'Poppins' }}>
+      {showBackToTop && (
+        <button
+          onClick={() => scrollToSection('top')}
+          className="fixed bottom-8 right-8 z-50 p-2 w-10 h-10 rounded-full bg-green-700 text-white focus:outline-none hover:bg-green-600 transition ease-in-out duration-200"
+        >
+          <div className="w-full h-full">
+            <FontAwesomeIcon icon={faChevronUp} />
+          </div>
+        </button>
+      )}
       <div className="grid grid-flow-row-dense xl:grid-cols-3 sm:grid-cols-1">
         <div id="text-section" className="col-span-2">
           <p className="font-bold xl:text-6xl md:text-5xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
@@ -178,14 +208,17 @@ DEFINE TABLE post SCHEMALESS
         </div>
       </div>
       <div className="sm:text-center max:sm-text-left mt-40 lg:w-8/12 m-auto">
-        <p className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
+        <p
+          className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text"
+          style={{ lineHeight: '4rem' }}
+        >
           Why use MongoDB?
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-full m-auto">
-          MongoDB is an innovative NewSQL cloud database, suitable for serverless applications, jamstack applications,
-          single-page applications, and traditional applications. It is unmatched in its versatility and financial value, with the
-          ability for deployment on cloud, on-premise, embedded, and edge computing environments. For a hassle-free setup, get
-          started with MongoDB Cloud in one-click.
+          MongoDB is an innovative NewSQL cloud database, suitable for serverless applications, jamstack applications, single-page
+          applications, and traditional applications. It is unmatched in its versatility and financial value, with the ability for
+          deployment on cloud, on-premise, embedded, and edge computing environments. For a hassle-free setup, get started with
+          MongoDB Cloud in one-click.
         </p>
       </div>
       <div className="mt-20">
@@ -338,7 +371,7 @@ DEFINE TABLE post SCHEMALESS
         <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">
           MongoDB is being built in the open. We would love for you to be involved.
         </p>
-        <div className="mt-5 text-base sm:space-x-8 space-y-5">
+        <div className="mt-5 text-base sm:space-x-8">
           <GlowGrayPrimary
             onClick={() => {
               window.open('https://github.com/mongodb', '_blank')

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../index.scss'
 
 // assets
@@ -12,7 +12,31 @@ import Sidebar from '../components/docs/Sidebar'
 import { FeatureCell } from '../components/docs/FeatureCell'
 import { CodeBlock } from '../components/CodeBlock'
 
+// fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+
+// utils
+import { scrollToSection } from '../utils/scroll'
+
 const Features = () => {
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 300) {
+        setShowBackToTop(true)
+      } else {
+        setShowBackToTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   const entries = [
     { id: 'document-model', title: 'Document Model' },
     { id: 'sharding', title: 'Sharding' },
@@ -119,7 +143,17 @@ console.log(result);
 `
 
   return (
-    <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" style={{ fontFamily: 'Poppins' }}>
+    <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" id="top" style={{ fontFamily: 'Poppins' }}>
+      {showBackToTop && (
+        <button
+          onClick={() => scrollToSection('top')}
+          className="fixed bottom-8 right-8 z-50 p-2 w-10 h-10 rounded-full bg-green-700 text-white focus:outline-none hover:bg-green-600 transition ease-in-out duration-200"
+        >
+          <div className="w-full h-full">
+            <FontAwesomeIcon icon={faChevronUp} />
+          </div>
+        </button>
+      )}
       <div className="grid grid-flow-row-dense xl:grid-cols-3 sm:grid-cols-1 pb-24">
         <div id="text-section" className="col-span-2">
           <p

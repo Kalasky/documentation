@@ -12,6 +12,13 @@ import loader from '../assets/loader.svg'
 import { GlowGreenPrimary, GlowGrayPrimary } from '../components/Buttons'
 import Sidebar from '../components/docs/Sidebar'
 
+// fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+
+// utils
+import { scrollToSection } from '../utils/scroll'
+
 // Custom options for rendering rich text
 const options = {
   renderMark: {
@@ -28,7 +35,11 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h1 id={id} className="mt-10 text-left sm:text-4xl max-sm:2xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h1
+          id={id}
+          className="mt-10 text-left sm:text-4xl max-sm:2xl font-bold text-white leading-none"
+          style={{ wordWrap: 'break-word' }}
+        >
           {children}
         </h1>
       )
@@ -37,7 +48,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h2 id={id} className="mt-10 sm:text-3xl max-sm:2xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h2 id={id} className="mt-10 sm:text-3xl max-sm:2xl font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h2>
       )
@@ -46,7 +57,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h3 id={id} className="mt-10 text-xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h3 id={id} className="mt-10 text-xl font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h3>
       )
@@ -55,7 +66,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h4 id={id} className="mt-10 text-lg font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h4 id={id} className="mt-10 text-lg font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h4>
       )
@@ -64,7 +75,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h5 id={id} className="mt-10 text-lg font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h5 id={id} className="mt-10 text-lg font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h5>
       )
@@ -73,7 +84,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h6 id={id} className="mt-10 text-base font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h6 id={id} className="mt-10 text-base font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h6>
       )
@@ -123,6 +134,22 @@ const ContentPage = () => {
   const [fetchError, setFetchError] = useState(false)
   const [retryCount, setRetryCount] = useState(0)
   const [entries, setEntries] = useState([])
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 300) {
+        setShowBackToTop(true)
+      } else {
+        setShowBackToTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleRefresh = () => {
     window.location.reload()
@@ -228,7 +255,17 @@ const ContentPage = () => {
     return <div className="flex justify-center items-center h-screen">Something went wrong. Please try again later.</div>
   }
   return (
-    <div key={content.sys.id}>
+    <div key={content.sys.id} id="top">
+      {showBackToTop && (
+        <button
+          onClick={() => scrollToSection('top')}
+          className="fixed bottom-8 right-8 z-50 p-2 w-10 h-10 rounded-full bg-green-700 text-white focus:outline-none hover:bg-green-600 transition ease-in-out duration-200"
+        >
+          <div className="w-full h-full">
+            <FontAwesomeIcon icon={faChevronUp} />
+          </div>
+        </button>
+      )}
       <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" style={{ fontFamily: 'Poppins' }}>
         <div className="grid grid-cols-3 max-sm:grid-cols-1 gap-6">
           <div className="col-span-1" style={{ position: 'sticky' }}>

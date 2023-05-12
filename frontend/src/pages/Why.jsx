@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faCode } from '@fortawesome/free-solid-svg-icons'
+import { faStar, faCode, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
 // heroicons
 import { ShieldCheckIcon } from '@heroicons/react/24/outline'
@@ -11,16 +11,46 @@ import { ShieldCheckIcon } from '@heroicons/react/24/outline'
 import { FeatureCard } from '../components/Cards'
 import { GlowGrayPrimary } from '../components/Buttons'
 
+// utils
+import { scrollToSection } from '../utils/scroll'
+
 const Why = () => {
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 300) {
+        setShowBackToTop(true)
+      } else {
+        setShowBackToTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" style={{ fontFamily: 'Poppins' }}>
+    <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" id="top" style={{ fontFamily: 'Poppins' }}>
+      {showBackToTop && (
+        <button
+          onClick={() => scrollToSection('top')}
+          className="fixed bottom-8 right-8 z-50 p-2 w-10 h-10 rounded-full bg-green-700 text-white focus:outline-none hover:bg-green-600 transition ease-in-out duration-200"
+        >
+          <div className="w-full h-full">
+            <FontAwesomeIcon icon={faChevronUp} />
+          </div>
+        </button>
+      )}
       <div className="sm:text-center max:sm-text-left lg:w-8/12 m-auto">
         <p className="font-bold md:text-6xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
           A highly-scalable NewSQL database
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">
-          MongoDB is a flexible, developer-friendly, fully ACID transactional, realtime document-graph web database for
-          serverless applications. Never again worry about database provisioning, scaling, sharding, replication, or correctness.
+          MongoDB is a flexible, developer-friendly, fully ACID transactional, realtime document-graph web database for serverless
+          applications. Never again worry about database provisioning, scaling, sharding, replication, or correctness.
         </p>
       </div>
       <div className="grid xl:grid-cols-3 sm:grid-cols-1 mt-20 gap-6">

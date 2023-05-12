@@ -10,6 +10,13 @@ import { GlowGreenPrimary, GlowGrayPrimary } from '../components/Buttons'
 // assets
 import loader from '../assets/loader.svg'
 
+// fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+
+// utils
+import { scrollToSection } from '../utils/scroll'
+
 // Custom options for rendering rich text
 const options = {
   renderMark: {
@@ -46,6 +53,22 @@ const Content = () => {
   const [retryCount, setRetryCount] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
   const postsPerPage = 6
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 300) {
+        setShowBackToTop(true)
+      } else {
+        setShowBackToTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleRefresh = () => {
     window.location.reload()
@@ -106,7 +129,17 @@ const Content = () => {
   //  if the data is not fetched after 5 seconds, let the user know
   if (isTimeout && isLoading) {
     return (
-      <div className="container m-auto">
+      <div className="container m-auto" id="top">
+        {showBackToTop && (
+          <button
+            onClick={() => scrollToSection('top')}
+            className="fixed bottom-8 right-8 z-50 p-2 w-10 h-10 rounded-full bg-green-700 text-white focus:outline-none hover:bg-green-600 transition ease-in-out duration-200"
+          >
+            <div className="w-full h-full">
+              <FontAwesomeIcon icon={faChevronUp} />
+            </div>
+          </button>
+        )}
         <div className="text-5xl text-center text-white font-bold mb-12 align-middle mt-24">Uh Oh!</div>
         <div className="flex justify-center items-center font-semibold text-xl text-center m-auto text-white">
           Loading is taking longer than usual. Please check your network connection.

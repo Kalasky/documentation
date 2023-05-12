@@ -11,6 +11,13 @@ import loader from '../assets/loader.svg'
 import { GlowGreenPrimary, GlowGrayPrimary } from '../components/Buttons'
 import Sidebar from '../components/docs/Sidebar'
 
+// fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+
+// utils
+import { scrollToSection } from '../utils/scroll'
+
 // Custom options for rendering rich text
 const options = {
   renderMark: {
@@ -27,7 +34,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h1 id={id} className="mt-10 text-4xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h1 id={id} className="mt-10 text-4xl font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h1>
       )
@@ -36,7 +43,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h2 id={id} className="mt-10 text-3xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h2 id={id} className="mt-10 text-3xl font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h2>
       )
@@ -45,7 +52,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h3 id={id} className="mt-10 text-2xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h3 id={id} className="mt-10 text-2xl font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h3>
       )
@@ -54,7 +61,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h4 id={id} className="mt-10 text-xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h4 id={id} className="mt-10 text-xl font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h4>
       )
@@ -63,7 +70,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h5 id={id} className="mt-10 text-lg font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h5 id={id} className="mt-10 text-lg font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h5>
       )
@@ -72,7 +79,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h6 id={id} className="mt-10 text-base font-bold text-white" style={{ wordWrap: 'break-word' }}>
+        <h6 id={id} className="mt-10 text-base font-bold text-white leading-none" style={{ wordWrap: 'break-word' }}>
           {children}
         </h6>
       )
@@ -124,6 +131,22 @@ const Releases = () => {
   const [currentPage, setCurrentPage] = useState(1)
   const postsPerPage = 6
   const [entries, setEntries] = useState([])
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 300) {
+        setShowBackToTop(true)
+      } else {
+        setShowBackToTop(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const handleRefresh = () => {
     window.location.reload()
@@ -230,7 +253,17 @@ const Releases = () => {
   }
 
   return (
-    <div>
+    <div id="top">
+      {showBackToTop && (
+        <button
+          onClick={() => scrollToSection('top')}
+          className="fixed bottom-8 right-8 z-50 p-2 w-10 h-10 rounded-full bg-green-700 text-white focus:outline-none hover:bg-green-600 transition ease-in-out duration-200"
+        >
+          <div className="w-full h-full">
+            <FontAwesomeIcon icon={faChevronUp} />
+          </div>
+        </button>
+      )}
       {displayedContent.map((content) => {
         const { description } = content.fields
         return (
