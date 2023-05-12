@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "MongoDB",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "start": "concurrently \"cd backend && npm start\" \"cd frontend && npm run dev\" ",
     "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\" "
