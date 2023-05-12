@@ -118,7 +118,7 @@ const Docs = () => {
   const [entries, setEntries] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/docs')
+    fetch('/api/docs')
       .then((res) => res.json())
       .then((data) => {
         data.forEach((content) => {
