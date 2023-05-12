@@ -129,7 +129,7 @@ const ContentPage = () => {
   }
 
   const fetchContent = () => {
-    fetch(`http://localhost:5000/api/blog/${id}`)
+    fetch(`${process.env.REACT_APP_API_DOMAIN}/api/blog/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setContent(data)
