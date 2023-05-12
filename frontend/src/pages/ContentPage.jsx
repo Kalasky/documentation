@@ -188,25 +188,26 @@ const ContentPage = () => {
   //  if the data is not fetched after 5 seconds, let the user know
   if (isTimeout && isLoading) {
     return (
-      <div className="">
+      <div className="container m-auto">
         <div className="text-5xl text-center text-white font-bold mb-12 align-middle mt-24">Uh Oh!</div>
         <div className="flex justify-center items-center font-semibold text-xl text-center m-auto text-white">
           Loading is taking longer than usual. Please check your network connection.
         </div>
-        <div className="sm:text-center max:sm-text-left mt-20 lg:w-8/12 m-auto">
+        <div className="mt-20 m-auto">
           <p
-            className="font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text"
+            className="text-center m-auto font-bold md:text-4xl max-sm:text-4xl max-lg:text-4xl bg-gradient-to-r from-green-400 to-white text-transparent bg-clip-text"
             style={{ lineHeight: '3.5rem' }}
           >
-            We are building MongoDB for everyone
+            Engine noises
           </p>
-          <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">
-            MongoDB is being built in the open. We would love for you to be involved.
+          <p className="text-gray-400 text-base mt-5 m-auto text-center">
+            If the issues persists please contact an administrator.
           </p>
-          <div className="mt-10 text-base sm:space-x-8 space-y-5">
+          <div className="m-auto text-center mt-10 text-base sm:space-x-8 space-y-5">
             <GlowGrayPrimary onClick={() => handleRefresh()} padding={'px-4 py-3'}>
               Refresh Page
             </GlowGrayPrimary>
+            <span className="max-sm:mt-5 max-sm:block"></span>
             <Link to="/">
               <GlowGrayPrimary onClick={() => {}} padding={'px-4 py-3'}>
                 Go back home
