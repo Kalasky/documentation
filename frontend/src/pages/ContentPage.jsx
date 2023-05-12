@@ -129,9 +129,11 @@ const ContentPage = () => {
   }
 
   const fetchContent = () => {
-    fetch(`${process.env.REACT_APP_API_DOMAIN}/api/blog/${id}`)
+    console.log(process.env.REACT_APP_API_DOMAIN)
+    fetch(`https://documentation-git-main-kalasky.vercel.app/api/blog/${id}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         setContent(data)
         // the data has been fetched
         setIsLoading(false)
