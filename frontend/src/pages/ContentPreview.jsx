@@ -42,7 +42,7 @@ const Content = () => {
   const lineClampRef = useRef(null)
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/blog')
+    fetch('/api/blog')
       .then((res) => res.json())
       .then((data) => {
         data.forEach((content) => {
@@ -103,8 +103,6 @@ const Content = () => {
                     <div className="line-clamp" ref={lineClampRef}>
                       {description.nodeType ? documentToReactComponents(description, options) : description}
                     </div>
-
-                    {/* Checking if the image exists */}
                     <Link to={`/blog/${content.sys.id}`}>
                       <GlowGreenPrimary onClick={() => {}} children="Read More" padding={'px-4 py-3 mt-6'} />
                     </Link>
