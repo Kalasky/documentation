@@ -51,7 +51,7 @@ const NavBar = () => {
               <div className="flex justify-start lg:w-0 flex-1">
                 <Link to="/">
                   <span className="sr-only">Workflow</span>
-                  <img className="h-8 w-auto sm:h-10" src={mongologo} alt="" />
+                  <img className="h-10 w-auto sm:h-10" src={mongologo} alt="" />
                 </Link>
               </div>
               <Popover.Group as="nav" className="hidden md:flex space-x-10 ml-auto">
