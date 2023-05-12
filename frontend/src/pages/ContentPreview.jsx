@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { MARKS, BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Link } from 'react-router-dom'
 import '../index.scss'
+import ClampLines from 'react-clamp-lines'
 
 // components
 import { GlowGreenPrimary } from '../components/Buttons'
@@ -39,7 +40,6 @@ const Content = () => {
   const [content, setContent] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const postsPerPage = 6
-  const lineClampRef = useRef(null)
 
   useEffect(() => {
     fetch('/api/blog')
@@ -58,23 +58,6 @@ const Content = () => {
   }
 
   const displayedContent = content.slice(0, currentPage * postsPerPage)
-
-  const clampLines = (element, numLines) => {
-    if (element) {
-      const style = window.getComputedStyle(element)
-      const lineHeight = parseInt(style.lineHeight, 10)
-      const maxHeight = lineHeight * numLines
-      element.style.maxHeight = `${maxHeight}px`
-      element.style.overflow = 'hidden'
-    } else {
-      console.error('Element not found', element)
-    }
-  }
-
-  useEffect(() => {
-    const el = lineClampRef.current
-    clampLines(el, 5)
-  }, [])
 
   return (
     <div>
@@ -100,9 +83,15 @@ const Content = () => {
                   <div className="text-white text-lg font-bold p-10 cardbg-color rounded-b-2xl">
                     <div className="text-xl flex">{content.fields.title}</div>
                     {/* Converting description to react component to render it, due to the fact that it is a rich text field */}
-                    <div className="line-clamp" ref={lineClampRef}>
-                      {description.nodeType ? documentToReactComponents(description, options) : description}
-                    </div>
+                    <ClampLines
+                      text={description.nodeType ? documentToReactComponents(description, options) : description}
+                      id="really-unique-id"
+                      lines={5}
+                      ellipsis="..."
+                      buttons={false}
+                      innerElement="p"
+                    />
+                    {/* Checking if the image exists */}
                     <Link to={`/blog/${content.sys.id}`}>
                       <GlowGreenPrimary onClick={() => {}} children="Read More" padding={'px-4 py-3 mt-6'} />
                     </Link>

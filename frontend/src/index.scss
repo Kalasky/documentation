@@ -301,10 +301,3 @@ body {
   top: 0;
   left: 0;
 }
-
-.line-clamp {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
