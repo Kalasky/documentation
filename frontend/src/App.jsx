@@ -33,6 +33,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/docs" element={<Docs />} />
         <Route path="/releases" element={<Releases />} />
+        <Route path="/releases:id" element={<Releases />} />
       </Routes>
       <Footer />
     </Router>
