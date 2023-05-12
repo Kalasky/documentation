@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import '../index.scss'
+import { animateScroll as scroll } from 'react-scroll'
 
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -43,7 +44,7 @@ const NavBar = () => {
 
   return (
     <Popover className={`relative ${isSticky ? 'max-md:sticky top-0 z-50 glass-overlay sm:bg-transparent' : 'bg-transparent'}`}>
-      {({ open }) => (
+      {({ open, close }) => (
         <>
           <div className="container mx-auto sm:py-8">
             <div className="flex max-md:justify-between items-center border-b-2 border-none py-6 md:space-x-10">
@@ -62,16 +63,33 @@ const NavBar = () => {
                 <NavLink href="/blog" text="Blog" />
               </Popover.Group>
               <div className="hidden md:flex items-center space-x-10 ml-auto">
-                <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-2'}>
+                <GlowGrayPrimary
+                  onClick={() => {
+                    window.open('https://github.com/mongodb', '_blank')
+                  }}
+                  padding={'px-4 py-2'}
+                >
                   <FontAwesomeIcon icon={faStar} className="mr-2 text-green-500" />
                   Star us on GitHub
                 </GlowGrayPrimary>
-                <GlowGreenPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-2'}>
-                  Join cloud waitlist
+                <GlowGreenPrimary
+                  onClick={() => {
+                    window.open('https://www.mongodb.com/cloud/atlas/register', '_blank')
+                  }}
+                  padding={'px-4 py-2'}
+                >
+                  Try Free
                 </GlowGreenPrimary>
               </div>
               <div className="flex xl:hidden items-center ml-4">
                 <Popover.Button
+                  onClick={() => {
+                    if (open) {
+                      document.body.classList.remove('overflow-hidden')
+                    } else {
+                      document.body.classList.add('overflow-hidden')
+                    }
+                  }}
                   className={classNames(
                     open ? 'text-gray-900' : 'text-gray-500',
                     'rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-green-500'
@@ -113,7 +131,7 @@ const NavBar = () => {
                     isSticky ? 'glass-overlay' : 'bg-transparent'
                   }`}
                 >
-                  <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 globalbg divide-y-2 divide-gray-700">
+                  <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 globalbg divide-y-2 divide-gray-700 overflow-y-auto max-h-screen">
                     <div className="pt-5 pb-6 px-5">
                       <div className="flex items-center justify-between">
                         <div>
@@ -121,8 +139,9 @@ const NavBar = () => {
                         </div>
                         <div className="-mr-2">
                           <Popover.Button
+                            onClick={() => close()}
                             className={classNames(
-                              open ? 'text-gray-900' : 'text-gray-500',
+                              open ? 'text-gray-400' : 'text-gray-500',
                               'rounded-md p-2 inline-flex items-center justify-center text-gray-300 hover:text-green-500'
                             )}
                           >
@@ -135,7 +154,15 @@ const NavBar = () => {
                         <ul className="mt-3 space-y-4">
                           {about.map((item) => (
                             <li key={item.name} className="text-base truncate">
-                              <Link to={item.href} className="font-medium text-white hover:text-green-500">
+                              <Link
+                                to={item.href}
+                                className="font-medium text-white hover:text-green-500"
+                                onClick={() => {
+                                  scroll.scrollToTop()
+                                  document.body.classList.remove('overflow-hidden')
+                                  close()
+                                }}
+                              >
                                 {item.name}
                               </Link>
                             </li>
@@ -147,7 +174,15 @@ const NavBar = () => {
                         <ul className="mt-3 space-y-4">
                           {product.map((item) => (
                             <li key={item.name} className="text-base truncate">
-                              <Link to={item.href} className="font-medium text-white hover:text-green-500">
+                              <Link
+                                to={item.href}
+                                className="font-medium text-white hover:text-green-500"
+                                onClick={() => {
+                                  scroll.scrollToTop()
+                                  document.body.classList.remove('overflow-hidden')
+                                  close()
+                                }}
+                              >
                                 {item.name}
                               </Link>
                             </li>
@@ -162,7 +197,7 @@ const NavBar = () => {
                           <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Community</h3>
                           {social.map((item) => (
                             <Link key={item.name} to={item.href} className="-m-3 p-3 flex items-center rounded-md">
-                              <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
+                              <FontAwesomeIcon icon={item.icon} className="h-4 text-green-600" /> <span className="ml-3"></span>
                               <span className="ml-3 text-base font-medium text-white hover:text-green-500">{item.name}</span>
                             </Link>
                           ))}

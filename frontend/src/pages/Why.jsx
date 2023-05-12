@@ -108,7 +108,12 @@ const Why = () => {
           MongoDB is being built in the open. We would love for you to be involved.
         </p>
         <div className="mt-5 text-base sm:space-x-8 space-y-5">
-          <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
+          <GlowGrayPrimary
+            onClick={() => {
+              window.open('https://github.com/mongodb', '_blank')
+            }}
+            padding={'px-4 py-2'}
+          >
             <FontAwesomeIcon icon={faStar} className="mr-2 text-green-500" />
             Star us on GitHub
           </GlowGrayPrimary>

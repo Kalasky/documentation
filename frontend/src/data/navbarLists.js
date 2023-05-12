@@ -1,41 +1,50 @@
 import { AcademicCapIcon } from '@heroicons/react/24/outline'
 import { faCircleQuestion, faListCheck, faRocket, faRoad } from '@fortawesome/free-solid-svg-icons'
+import {
+  faGithubAlt,
+  faTwitter,
+  faLinkedin,
+  faYoutube,
+  faStackOverflow,
+  faFacebookF,
+  faTwitch,
+} from '@fortawesome/free-brands-svg-icons'
 
 export const social = [
   {
     name: 'GitHub',
-    href: '',
-    icon: AcademicCapIcon,
+    href: 'https://github.com/mongodb',
+    icon: faGithubAlt,
   },
   {
     name: 'Twitter',
-    href: '',
-    icon: AcademicCapIcon,
+    href: 'https://twitter.com/mongodb',
+    icon: faTwitter,
   },
   {
     name: 'LinkedIn',
-    href: '',
-    icon: AcademicCapIcon,
+    href: 'https://www.linkedin.com/company/mongodbinc/',
+    icon: faLinkedin,
   },
   {
     name: 'Youtube',
-    href: '',
-    icon: AcademicCapIcon,
+    href: 'https://www.youtube.com/user/mongodb',
+    icon: faYoutube,
   },
   {
     name: 'Stack Overflow',
-    href: '',
-    icon: AcademicCapIcon,
+    href: 'https://stackoverflow.com/tags/mongodb/info',
+    icon: faStackOverflow,
   },
   {
-    name: 'Discord',
-    href: '',
-    icon: AcademicCapIcon,
+    name: 'Facebook',
+    href: 'https://www.facebook.com/MongoDB/',
+    icon: faFacebookF,
   },
   {
-    name: 'Reddit',
-    href: '',
-    icon: AcademicCapIcon,
+    name: 'Twitch',
+    href: 'https://www.twitch.tv/mongodb/videos',
+    icon: faTwitch,
   },
 ]
 
@@ -49,11 +58,7 @@ export const product = [
     href: '/why',
   },
   {
-    name: 'Install',
-    href: '/install',
-  },
-  {
-    name: 'Featuers',
+    name: 'Features',
     href: '/features',
   },
   {
@@ -100,7 +105,7 @@ export const productDropdown = [
 export const about = [
   {
     name: 'Home',
-    href: '/home',
+    href: '/',
   },
   {
     name: 'Install',

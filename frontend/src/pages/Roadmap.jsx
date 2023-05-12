@@ -27,8 +27,13 @@ const Roadmap = () => {
             If you have an idea for SurrealDB, then we would love to hear from you.
           </p>
           <div className="mt-10 text-base space-y-5">
-            <GlowGrayPrimary onClick={() => {}} children="Follow us on Github" padding={'px-4 py-3'} />
-            <GlowGrayPrimary onClick={() => {}} children="Join our Discord" padding={'px-4 py-3'} margin="sm:m-8" />
+            <GlowGrayPrimary
+              onClick={() => {
+                window.open('https://github.com/mongodb-developer/', '_blank')
+              }}
+              children="Follow us on Github"
+              padding={'px-4 py-3'}
+            />
           </div>
         </div>
         <img
@@ -38,7 +43,7 @@ const Roadmap = () => {
           style={{ maxWidth: '540px', right: '62px' }}
         />
       </div>
-      <p className="mt-40 text-center font-bold xl:text-6xl md:text-5xl max-sm:text-4xl max-lg:text-4xl lg:w-full bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
+      <p className="sm:mt-40 max-sm:mt-20 text-center font-bold xl:text-6xl md:text-5xl max-sm:text-4xl max-lg:text-4xl lg:w-full bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
         SurrealDB Roadmap
       </p>
       <Timeline />
@@ -53,7 +58,12 @@ const Roadmap = () => {
           MongoDB is being built in the open. We would love for you to be involved.
         </p>
         <div className="mt-5 text-base sm:space-x-8 space-y-5">
-          <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
+          <GlowGrayPrimary
+            onClick={() => {
+              window.open('https://github.com/mongodb', '_blank')
+            }}
+            padding={'px-4 py-2'}
+          >
             <FontAwesomeIcon icon={faStar} className="mr-2 text-green-500" />
             Star us on GitHub
           </GlowGrayPrimary>

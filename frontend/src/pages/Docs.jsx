@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { MARKS, BLOCKS } from '@contentful/rich-text-types'
+import { MARKS, BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { Link } from 'react-router-dom'
 import '../index.scss'
@@ -9,19 +9,22 @@ import { GlowGreenPrimary } from '../components/Buttons'
 import Sidebar from '../components/docs/Sidebar'
 
 // Custom options for rendering rich text
-// Custom options for rendering rich text
 const options = {
   renderMark: {
     [MARKS.BOLD]: (text) => <strong>{text}</strong>,
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <p className="mt-6 font-light text-base text-white">{children}</p>,
+    [BLOCKS.PARAGRAPH]: (node, children) => (
+      <p className="mt-6 font-light text-base text-white" style={{ wordWrap: 'break-word' }}>
+        {children}
+      </p>
+    ),
     // heading
     [BLOCKS.HEADING_1]: (node, children) => {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h1 id={id} className="mt-10 text-4xl font-bold text-white">
+        <h1 id={id} className="mt-10 text-left sm:text-4xl max-sm:2xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
           {children}
         </h1>
       )
@@ -30,7 +33,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h2 id={id} className="mt-10 text-3xl font-bold text-white">
+        <h2 id={id} className="mt-10 sm:text-3xl max-sm:2xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
           {children}
         </h2>
       )
@@ -39,7 +42,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h3 id={id} className="mt-10 text-2xl font-bold text-white">
+        <h3 id={id} className="mt-10 text-xl font-bold text-white" style={{ wordWrap: 'break-word' }}>
           {children}
         </h3>
       )
@@ -48,7 +51,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h4 id={id} className="mt-10 text-xl font-bold text-white">
+        <h4 id={id} className="mt-10 text-lg font-bold text-white" style={{ wordWrap: 'break-word' }}>
           {children}
         </h4>
       )
@@ -57,7 +60,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h5 id={id} className="mt-10 text-lg font-bold text-white">
+        <h5 id={id} className="mt-10 text-lg font-bold text-white" style={{ wordWrap: 'break-word' }}>
           {children}
         </h5>
       )
@@ -66,7 +69,7 @@ const options = {
       const id = node.content[0].value.toLowerCase().replace(/\s/g, '-')
 
       return (
-        <h6 id={id} className="mt-10 text-base font-bold text-white">
+        <h6 id={id} className="mt-10 text-base font-bold text-white" style={{ wordWrap: 'break-word' }}>
           {children}
         </h6>
       )
@@ -82,9 +85,32 @@ const options = {
       const imageId = node.data.target.sys.id
       return <img className="rounded-2xl shadow-2xl mt-10 m-auto" id={imageId} src={imageUrl} alt={title} />
     },
+    [BLOCKS.EMBEDDED_CODE]: (node, children) => (
+      <pre className="p-4 bg-gray-800 text-white rounded-md overflow-x-auto">{children}</pre>
+    ),
+
+    // table
+    [BLOCKS.TABLE]: (node, children) => (
+      <div className="overflow-x-auto">
+        <table className="table-auto divide-y divide-gray-200">{children}</table>
+      </div>
+    ),
+    [BLOCKS.TABLE_ROW]: (node, children) => <tr className="">{children}</tr>,
+    [BLOCKS.TABLE_CELL]: (node, children) => (
+      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{children}</td>
+    ),
+    [BLOCKS.TABLE_HEADER_CELL]: (node, children) => (
+      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{children}</th>
+    ),
+
+    // hyperlink
+    [INLINES.HYPERLINK]: (node, children) => (
+      <a href={node.data.uri} className="text-blue-500 hover:underline">
+        {children}
+      </a>
+    ),
   },
 }
-
 const Docs = () => {
   const [content, setContent] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
@@ -110,7 +136,7 @@ const Docs = () => {
               id: item.content[0].value.toLowerCase().replace(/\s/g, '-'),
               title: item.content[0].value,
             }))
-            setEntries(elements)
+          setEntries(elements)
         })
       })
       .catch((err) => console.error(err))

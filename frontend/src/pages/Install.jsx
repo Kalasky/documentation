@@ -12,7 +12,7 @@ const Community = () => {
   return (
     <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" style={{ fontFamily: 'Poppins' }}>
       <div className="sm:text-center max:sm-text-left lg:w-8/12 m-auto">
-        <p className="font-bold md:text-6xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
+        <p className="font-bold md:text-6xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text" style={{lineHeight: '6rem'}}>
           Install MongoDB
         </p>
         <p className="text-gray-400 text-base mt-5 lg:w-5/6 m-auto">

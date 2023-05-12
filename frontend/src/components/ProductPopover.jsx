@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 // data
 import { productDropdown } from '../data/navbarLists'
-import { social } from '../data/footerLists'
+import { social } from '../data/navbarLists'
 
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

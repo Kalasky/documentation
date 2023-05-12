@@ -66,7 +66,7 @@ export const product = [
     href: '/map3',
   },
   {
-    name: 'Featuers',
+    name: 'Features',
     href: '/map1',
   },
   {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../index.scss'
 
 // assets
@@ -17,7 +18,7 @@ import { mediaCards } from '../data/mediaCards'
 
 // fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faCode, faListCheck, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRight, faCode, faListCheck, faStar, faMagicWandSparkles } from '@fortawesome/free-solid-svg-icons'
 
 // heroicons
 import { ShieldCheckIcon } from '@heroicons/react/24/outline'
@@ -72,9 +73,19 @@ DEFINE TABLE post SCHEMALESS
             serverless database.
           </p>
           <div className="mt-10 text-base space-y-5">
-            <GlowGrayPrimary onClick={() => {}} children="Install" padding={'px-4 py-3'} />
-            <GlowGrayPrimary onClick={() => {}} children="Documentation" padding={'px-4 py-3'} margin="sm:m-8" />
-            <GlowGreenPrimary onClick={() => {}} children="Join cloud waitlist" padding={'px-4 py-3'} />
+            <Link to="/install">
+              <GlowGrayPrimary children="Install" padding={'px-4 py-3'} />
+            </Link>
+            <Link to="/docs">
+              <GlowGrayPrimary children="Documentation" padding={'px-4 py-3'} margin="max-sm:mt-5 sm:m-8" />
+            </Link>
+            <GlowGreenPrimary
+              onClick={() => {
+                window.open('https://www.mongodb.com/cloud/atlas/register', '_blank')
+              }}
+              children="Try Free"
+              padding={'px-4 py-3'}
+            />
           </div>
         </div>
         <img
@@ -181,42 +192,50 @@ DEFINE TABLE post SCHEMALESS
         <div className="cardbg-color shadow-xl rounded-2xl">
           <div className="text-white text-lg font-bold p-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                Document & graph database
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                GraphQL and REST API
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                Built with Rust
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                Online and offline data sync
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                Incrementally computed views
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                JOIN-less deep fetching
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                Structured and un-structured data
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                Support for multi-tenant apps
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                In-built access and permissions
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                Distributed and highly-scalable
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                Distributed ACID transactions
-              </IconText>
-              <IconText icon={ShieldCheckIcon} color="text-green-500">
-                Multi-row, multi-table transactions
-              </IconText>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">Document & graph database</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">GraphQL and REST API</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">Online and offline data sync</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">Incrementally computed views</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">JOIN-less deep fetching</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">Structured and un-structured data</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">Support for multi-tenant apps</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">In-built access and permissions</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">Distributed and highly-scalable</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">Distributed ACID transactions</span>
+              </div>
+              <div className="flex">
+                <FontAwesomeIcon icon={faMagicWandSparkles} className="flex text-green-500 mr-4" />
+                <span className="text-base font-normal">Multi-row, multi-table transactions</span>
+              </div>
             </div>
           </div>
         </div>
@@ -233,16 +252,20 @@ DEFINE TABLE post SCHEMALESS
           </p>
           <div className="mt-5 text-base grid grid-cols-2 max-sm:space-y-4 md:space-y-0 lg:space-y-4 xl:space-y-0">
             <div className="lg:col-span-2 xl:col-span-1 max-sm:col-span-2">
-              <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
-                <FontAwesomeIcon icon={faListCheck} className="mr-4 text-green-500" />
-                View all features
-              </GlowGrayPrimary>
+              <Link to="/features">
+                <GlowGrayPrimary padding={'px-4 py-3'}>
+                  <FontAwesomeIcon icon={faListCheck} className="mr-4 text-green-500" />
+                  View all features
+                </GlowGrayPrimary>
+              </Link>
             </div>
             <div className="lg:col-span-2 xl:col-span-1 max-sm:col-span-2">
-              <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
-                Get started with MongoDB
-                <FontAwesomeIcon icon={faArrowRight} className="ml-4 text-green-500" />
-              </GlowGrayPrimary>
+              <Link to="/install">
+                <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
+                  Get started with MongoDB
+                  <FontAwesomeIcon icon={faArrowRight} className="ml-4 text-green-500" />
+                </GlowGrayPrimary>
+              </Link>
             </div>
           </div>
         </div>
@@ -262,16 +285,20 @@ DEFINE TABLE post SCHEMALESS
           </p>
           <div className="mt-5 text-base grid grid-cols-2 max-sm:space-y-4 md:space-y-0 lg:space-y-4 xl:space-y-0">
             <div className="lg:col-span-2 xl:col-span-1 max-sm:col-span-2">
-              <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
-                <FontAwesomeIcon icon={faListCheck} className="mr-4 text-green-500" />
-                View all features
-              </GlowGrayPrimary>
+              <Link to="/features">
+                <GlowGrayPrimary padding={'px-4 py-3'}>
+                  <FontAwesomeIcon icon={faListCheck} className="mr-4 text-green-500" />
+                  View all features
+                </GlowGrayPrimary>
+              </Link>
             </div>
             <div className="lg:col-span-2 xl:col-span-1 max-sm:col-span-2">
-              <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
-                Get started with MongoDB
-                <FontAwesomeIcon icon={faArrowRight} className="ml-4 text-green-500" />
-              </GlowGrayPrimary>
+              <Link to="/install">
+                <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
+                  Get started with MongoDB
+                  <FontAwesomeIcon icon={faArrowRight} className="ml-4 text-green-500" />
+                </GlowGrayPrimary>
+              </Link>
             </div>
           </div>
         </div>
@@ -312,14 +339,20 @@ DEFINE TABLE post SCHEMALESS
           MongoDB is being built in the open. We would love for you to be involved.
         </p>
         <div className="mt-5 text-base sm:space-x-8 space-y-5">
-          <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
+          <GlowGrayPrimary
+            onClick={() => {
+              window.open('https://github.com/mongodb', '_blank')
+            }}
+            padding={'px-4 py-2'}
+          >
             <FontAwesomeIcon icon={faStar} className="mr-2 text-green-500" />
             Star us on GitHub
           </GlowGrayPrimary>
-          <GlowGrayPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-3'}>
-            <FontAwesomeIcon icon={faCode} className="mr-2 text-green-500" />
-            View our open source projects
-          </GlowGrayPrimary>
+          <Link to="/features">
+            <GlowGreenPrimary onClick={() => console.log('Clicked!')} padding={'px-4 py-2'}>
+              View Our Features
+            </GlowGreenPrimary>
+          </Link>
         </div>
       </div>
     </div>
