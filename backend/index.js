@@ -18,12 +18,12 @@ const client = contentful.createClient({
 })
 
 // blog routes
-app.get('/blog', async (req, res) => {
+app.get('/api/blog', async (req, res) => {
   const entries = await client.getEntries({ content_type: 'mongoBlog' })
   res.json(entries.items)
 })
 
-app.get('/blog/:id', async (req, res) => {
+app.get('/api/blog/:id', async (req, res) => {
   const { id } = req.params
   try {
     // entry is the ID of the contentful category i.e. mongoBlog
@@ -38,12 +38,12 @@ app.get('/blog/:id', async (req, res) => {
 })
 
 // documentation routes
-app.get('/docs', async (req, res) => {
+app.get('/api/docs', async (req, res) => {
   const entries = await client.getEntries({ content_type: 'mongoDocs' })
   res.json(entries.items)
 })
 
-app.get('/docs/:id', async (req, res) => {
+app.get('/api/docs/:id', async (req, res) => {
   const { id } = req.params
   try {
     // entry is the ID of the contentful category i.e. mongoBlog
@@ -58,12 +58,12 @@ app.get('/docs/:id', async (req, res) => {
 })
 
 // releases routes
-app.get('/releases', async (req, res) => {
+app.get('/api/releases', async (req, res) => {
   const entries = await client.getEntries({ content_type: 'mongoReleases' })
   res.json(entries.items)
 })
 
-app.get('/releases/:id', async (req, res) => {
+app.get('/api/releases/:id', async (req, res) => {
   const { id } = req.params
   try {
     // entry is the ID of the contentful category i.e. mongoBlog
