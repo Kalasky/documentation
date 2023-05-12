@@ -301,3 +301,14 @@ body {
   top: 0;
   left: 0;
 }
+
+.line-height {
+  line-height: 6;
+}
+
+
+@media (min-width: 1280px) {
+  .line-height {
+   line-height: 2 !important;
+  }
+}

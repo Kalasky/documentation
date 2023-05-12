@@ -157,8 +157,7 @@ console.log(result);
       <div className="grid grid-flow-row-dense xl:grid-cols-3 sm:grid-cols-1 pb-24">
         <div id="text-section" className="col-span-2">
           <p
-            className="font-bold xl:text-6xl md:text-5xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text"
-            style={{ lineHeight: '6rem' }}
+            className="font-bold xl:text-6xl md:text-5xl max-sm:text-3xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text line-height"
           >
             MongoDB Features
           </p>

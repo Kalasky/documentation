@@ -49,9 +49,9 @@ const NavBar = () => {
           <div className="container mx-auto sm:py-8">
             <div className="flex max-md:justify-between items-center border-b-2 border-none py-6 md:space-x-10">
               <div className="flex justify-start lg:w-0 flex-1">
-                <Link to="/">
+                <Link to="/" onClick={() => window.scrollTo(0, 0)}>
                   <span className="sr-only">Workflow</span>
-                  <img className="h-10 w-auto sm:h-10" src={mongologo} alt="" />
+                  <img className="h-8 w-auto sm:h-10" src={mongologo} alt="" />
                 </Link>
               </div>
               <Popover.Group as="nav" className="hidden md:flex space-x-10 ml-auto">
