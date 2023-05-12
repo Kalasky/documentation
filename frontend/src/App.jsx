@@ -16,7 +16,6 @@ import ContentPreview from './pages/ContentPreview'
 import NotFound from './pages/404'
 import Docs from './pages/Docs'
 import Releases from './pages/Releases'
-import ReleasesPage from './pages/ReleasesPage'
 
 function App() {
   return (
