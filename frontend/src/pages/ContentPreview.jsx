@@ -41,7 +41,7 @@ const Content = () => {
   const postsPerPage = 6
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/blog')
+    fetch('/api/blog')
       .then((res) => res.json())
       .then((data) => {
         data.forEach((content) => {
