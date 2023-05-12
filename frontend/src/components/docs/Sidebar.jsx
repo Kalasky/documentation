@@ -21,8 +21,6 @@ const Sidebar = ({ entries, isVisible }) => {
             if (ref.offsetTop <= currentScrollPos && ref.offsetTop + ref.offsetHeight > currentScrollPos) {
               setActiveIndex(index)
             }
-          } else {
-            console.warn(`No element with id ${entry.id} found.`) // Log a warning if ref is null
           }
         })
       }

@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // data
-import { social, product, legal, about } from '../data/footerLists'
+import { social, product, about } from '../data/footerLists'
 
 // assets
 import mongologo from '../assets/mongoFullLogo.svg'
@@ -28,17 +29,19 @@ const Footer = () => {
 
             <p className="max-w-full mt-4 text-sm text-white">
               With an SQL-style query language, real-time queries with highly-efficient related data retrieval, advanced security
-              permissions for multi-tenant access, and support for performant analytical workloads, MongoDB is the next
-              generation serverless database.
+              permissions for multi-tenant access, and support for performant analytical workloads, MongoDB is the next generation
+              serverless database.
             </p>
             <p className="space-x-4 text-3xl mt-6">
-              <FontAwesomeIcon icon={faGithub} className="text-gray-400" />
-              <FontAwesomeIcon icon={faTwitter} className="text-gray-400" />
-              <FontAwesomeIcon icon={faYoutube} className="text-gray-400" />
-              <FontAwesomeIcon icon={faStackOverflow} className="text-gray-400" />
-              <FontAwesomeIcon icon={faDiscord} className="text-gray-400" />
-              <FontAwesomeIcon icon={faRedditAlien} className="text-gray-400" />
-              <FontAwesomeIcon icon={faLinkedin} className="text-gray-400" />
+              {social.map((item) => {
+                return (
+                  <a key={item.name} className="hover:opacity-75 text-gray-400" href={item.href}>
+                    <span>
+                      <FontAwesomeIcon icon={item.icon} className="mr-3" />
+                    </span>
+                  </a>
+                )
+              })}
             </p>
             <div className="border-t border-gray-700 mt-10"></div>
           </div>
@@ -63,21 +66,9 @@ const Footer = () => {
               <nav className="flex flex-col mt-4 space-y-2 text-base text-gray-400 leading-9">
                 {product.map((item) => {
                   return (
-                    <a key={item.name} className="hover:opacity-75" href={item.href}>
+                    <Link to={item.href} key={item.name} onClick={() => window.scrollTo(0, 0)} className="hover:opacity-75">
                       {item.name}
-                    </a>
-                  )
-                })}
-              </nav>
-            </div>
-            <div>
-              <p className="font-semibold text-white max-md:mt-12">LEGAL</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-base text-gray-400 leading-9">
-                {legal.map((item) => {
-                  return (
-                    <a key={item.name} className="hover:opacity-75" href={item.href}>
-                      {item.name}
-                    </a>
+                    </Link>
                   )
                 })}
               </nav>
@@ -87,9 +78,9 @@ const Footer = () => {
               <nav className="flex flex-col mt-4 space-y-2 text-base text-gray-400 leading-9">
                 {about.map((item) => {
                   return (
-                    <a key={item.name} className="hover:opacity-75" href={item.href}>
+                    <Link to={item.href} key={item.name} onClick={() => window.scrollTo(0, 0)} className="hover:opacity-75">
                       {item.name}
-                    </a>
+                    </Link>
                   )
                 })}
               </nav>

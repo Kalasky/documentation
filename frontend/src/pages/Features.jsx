@@ -4,9 +4,6 @@ import '../index.scss'
 // assets
 import documentation_hero from '../assets/documentation_hero.svg'
 
-// heroicons
-import { ShieldCheckIcon } from '@heroicons/react/24/outline'
-
 // components
 import Sidebar from '../components/docs/Sidebar'
 import { FeatureCell } from '../components/docs/FeatureCell'

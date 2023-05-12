@@ -1,115 +1,82 @@
 import {
-  faGithub,
+  faGithubAlt,
   faTwitter,
+  faLinkedin,
   faYoutube,
   faStackOverflow,
-  faDiscord,
-  faRedditAlien,
-  faLinkedin,
-  faDev,
+  faFacebookF,
+  faTwitch,
 } from '@fortawesome/free-brands-svg-icons'
 
 export const social = [
   {
     name: 'GitHub',
-    href: '',
-    icon: faGithub,
+    href: 'https://github.com/mongodb',
+    icon: faGithubAlt,
   },
   {
     name: 'Twitter',
-    href: '',
+    href: 'https://twitter.com/mongodb',
     icon: faTwitter,
   },
   {
     name: 'LinkedIn',
-    href: '',
+    href: 'https://www.linkedin.com/company/mongodbinc/',
     icon: faLinkedin,
   },
   {
     name: 'Youtube',
-    href: '',
+    href: 'https://www.youtube.com/user/mongodb',
     icon: faYoutube,
   },
   {
     name: 'Stack Overflow',
-    href: '',
+    href: 'https://stackoverflow.com/tags/mongodb/info',
     icon: faStackOverflow,
   },
   {
-    name: 'Discord',
-    href: '',
-    icon: faDiscord,
+    name: 'Facebook',
+    href: 'https://www.facebook.com/MongoDB/',
+    icon: faFacebookF,
   },
   {
-    name: 'Reddit',
-    href: '',
-    icon: faRedditAlien,
-  },
-  {
-    name: 'Dev',
-    href: '',
-    icon: faDev,
+    name: 'Twitch',
+    href: 'https://www.twitch.tv/mongodb/videos',
+    icon: faTwitch,
   },
 ]
 
 export const product = [
   {
     name: 'Documentation',
-    href: '/map1',
+    href: '/docs',
   },
   {
     name: 'Why',
-    href: '/map2',
+    href: '/why',
   },
   {
     name: 'Install',
-    href: '/map3',
+    href: '/install',
   },
   {
     name: 'Features',
-    href: '/map1',
+    href: '/features',
   },
   {
     name: 'Releases',
-    href: '/map2',
+    href: '/releases',
   },
   {
     name: 'Roadmap',
-    href: '/map3',
-  },
-]
-
-export const legal = [
-  {
-    name: 'Privacy Policy',
-    href: '/legal/privacy',
-  },
-  {
-    name: 'Cookies Policy',
-    href: '/legal/cookies',
-  },
-  {
-    name: 'Security Policy',
-    href: '/legal/security',
-  },
-  {
-    name: 'Liecense FAQs',
-    href: '/legal/license',
+    href: '/roadmap',
   },
 ]
 
 export const about = [
   {
-    name: 'About Us',
-    href: '/about',
-  },
-  {
     name: 'Community',
     href: '/community',
-  },
-  {
-    name: 'Open Source',
-    href: '/opensource',
   },
   {
     name: 'Blog',
