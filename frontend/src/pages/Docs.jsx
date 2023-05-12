@@ -118,7 +118,7 @@ const Docs = () => {
   const [entries, setEntries] = useState([])
 
   useEffect(() => {
-    fetch('https://documentation-kalasky.vercel.app/api/docs')
+    fetch('/api/docs')
       .then((res) => res.json())
       .then((data) => {
         data.forEach((content) => {
