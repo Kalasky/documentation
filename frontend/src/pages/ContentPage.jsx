@@ -139,15 +139,14 @@ const ContentPage = () => {
         setFetchError(false)
         // extract entries for sidebar
         const entries = data.fields.description.content
-          .filter((item) => ['heading-2', 'heading-3'].includes(item.nodeType))
+          .filter((item) =>
+            ['heading-1', 'heading-2', 'heading-3', 'heading-4', 'heading-5', 'heading-6'].includes(item.nodeType)
+          )
           .map((item) => ({
             id: item.content[0].value.toLowerCase().replace(/ /g, '-'),
             title: item.content[0].value,
           }))
         setEntries(entries)
-      })
-      .catch((err) => {
-        console.error(err)
       })
       .catch((err) => {
         console.error(err)
@@ -224,6 +223,9 @@ const ContentPage = () => {
   if (!content) {
     return <div className="flex justify-center items-center h-screen">Something went wrong. Please try again later.</div>
   }
+  {
+    console.log(content)
+  }
 
   return (
     <div key={content.sys.id}>
@@ -233,7 +235,7 @@ const ContentPage = () => {
             <Sidebar entries={entries} isVisible={true} />
           </div>
           <div className="shadow-2x1 rounded-2xl cardbg-color col-span-2 max-lg:col-span-3">
-            <div className="text-white text-lg font-bold p-10 cardbg-color rounded-b-2xl">
+            <div className="text-white text-lg font-bold p-10 cardbg-color rounded-2xl">
               <div className="text-xl flex">{content.fields.title}</div>
               {/* Converting description to react component to render it, due to the fact that it is a rich text field */}
               {content.fields.description.nodeType
@@ -244,7 +246,7 @@ const ContentPage = () => {
               </Link>
             </div>
             {/* date  */}
-            <div className="text-gray-600 text-sm p-5 m-aut">
+            <div className="text-gray-600 text-sm p-5 m-auto">
               <div>{new Date(content.sys.createdAt).toLocaleDateString()}</div>
             </div>
           </div>
