@@ -129,7 +129,7 @@ const ContentPage = () => {
   }
 
   const fetchContent = () => {
-    fetch(`/api/blog/${id}`)
+    fetch(`http://localhost:5000/api/blog/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setContent(data)

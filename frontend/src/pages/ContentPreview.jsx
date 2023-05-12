@@ -41,7 +41,7 @@ const Content = () => {
   const postsPerPage = 6
 
   useEffect(() => {
-    fetch('/api/blog')
+    fetch(`${process.env.REACT_APP_API_DOMAIN}/api/blog/${id}`)
       .then((res) => res.json())
       .then((data) => {
         data.forEach((content) => {
