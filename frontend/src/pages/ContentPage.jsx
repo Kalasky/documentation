@@ -224,7 +224,7 @@ const ContentPage = () => {
     return <div className="flex justify-center items-center h-screen">Something went wrong. Please try again later.</div>
   }
   {
-    console.log(content)
+    console.log(content.content)
   }
 
   return (
