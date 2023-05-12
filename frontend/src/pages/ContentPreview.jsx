@@ -177,48 +177,42 @@ const Content = () => {
           </div>
         </button>
       )}
-      {displayedContent.map((content) => {
-        const { previewDescription, media } = content.fields
-        return (
-          <div key={content.sys.id}>
-            <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" style={{ fontFamily: 'Poppins' }}>
-              <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6">
-                <div className="shadow-2x1 rounded-2xl cardbg-color">
-                  <div className="bg-slate-800 text-white text-lg font-bold rounded-t-2xl h-80 flex contents-center justify-center">
-                    <div className="blog-image-container">
-                      {media && media.fields.file && (
-                        <img
-                          className="blog-image rounded-t-2xl"
-                          src={`https:${media.fields.file.url}`}
-                          alt={media.fields.title}
-                        />
-                      )}
-                    </div>
+      <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" style={{ fontFamily: 'Poppins' }}>
+        <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6">
+          {displayedContent.map((content) => {
+            const { previewDescription, media } = content.fields
+            return (
+              <div key={content.sys.id} className="shadow-2x1 rounded-2xl cardbg-color">
+                <div className="bg-slate-800 text-white text-lg font-bold rounded-t-2xl h-80 flex contents-center justify-center">
+                  <div className="blog-image-container">
+                    {media && media.fields.file && (
+                      <img className="blog-image rounded-t-2xl" src={`https:${media.fields.file.url}`} alt={media.fields.title} />
+                    )}
                   </div>
-                  <div className="text-white text-lg font-bold p-10 cardbg-color rounded-b-2xl">
-                    <div className="text-xl flex">{content.fields.title}</div>
-                    {/* Preview desc. */}
-                    <div>{previewDescription}</div>
-                    {/* Checking if the image exists */}
-                    <Link to={`/blog/${content.sys.id}`}>
-                      <GlowGreenPrimary onClick={() => {}} children="Read More" padding={'px-4 py-3 mt-6'} />
-                    </Link>
-                    <div className="text-gray-600 text-sm mt-10">
-                      <div>{new Date(content.sys.createdAt).toLocaleDateString()}</div>
-                    </div>
+                </div>
+                <div className="text-white text-lg font-bold p-10 cardbg-color rounded-b-2xl">
+                  <div className="text-xl flex">{content.fields.title}</div>
+                  {/* Preview desc. */}
+                  <div>{previewDescription}</div>
+                  {/* Checking if the image exists */}
+                  <Link to={`/blog/${content.sys.id}`}>
+                    <GlowGreenPrimary onClick={() => {}} children="Read More" padding={'px-4 py-3 mt-6'} />
+                  </Link>
+                  <div className="text-gray-600 text-sm mt-10">
+                    <div>{new Date(content.sys.createdAt).toLocaleDateString()}</div>
                   </div>
-                  {/* Only render read more button if there are more than 6 posts */}
-                  {currentPage * postsPerPage >= content.length && (
-                    <div className="text-center">
-                      <GlowGreenPrimary onClick={handleReadMore} children="Read More" padding={'px-4 py-3 mt-6'} />
-                    </div>
-                  )}
                 </div>
               </div>
-            </div>
+            )
+          })}
+        </div>
+        {/* Only render read more button if there are more than 6 posts */}
+        {currentPage * postsPerPage < content.length && (
+          <div className="text-center">
+            <GlowGreenPrimary onClick={handleReadMore} children="Read More" padding={'px-4 py-3 mt-6'} />
           </div>
-        )
-      })}
+        )}
+      </div>
     </div>
   )
 }
