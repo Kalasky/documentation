@@ -91,7 +91,10 @@ DEFINE TABLE post SCHEMALESS
       )}
       <div className="grid grid-flow-row-dense xl:grid-cols-3 sm:grid-cols-1">
         <div id="text-section" className="col-span-2">
-          <p className="font-bold xl:text-6xl md:text-5xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text">
+          <p
+            className="font-bold xl:text-6xl md:text-5xl max-sm:text-4xl max-lg:text-4xl lg:w-11/12 bg-gradient-to-r from-green-400 to-white inline-block text-transparent bg-clip-text"
+            style={{ lineHeight: '1.2' }}
+          >
             MongoDB is the ultimate multi-model database for tomorrow's applications
           </p>
           <p className="mt-5 sm:text-3xl max-sm:text-2xl text-white text font-bold">
@@ -122,7 +125,7 @@ DEFINE TABLE post SCHEMALESS
           src={cluster}
           alt="mongo"
           className="hidden xl:block -z-10 relative"
-          style={{ maxWidth: '517px', right: '62px', top: '-6.8125' }}
+          style={{ maxWidth: '69.8125rem', right: '3.375rem', top: '-7.8125rem', height: '38.875rem' }}
         />
       </div>
       <div className="grid xl:grid-cols-3 sm:grid-cols-1 mt-20 gap-6">
