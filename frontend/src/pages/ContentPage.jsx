@@ -132,21 +132,25 @@ const ContentPage = () => {
     fetch(`/api/blog/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        setContent(data)
-        // the data has been fetched
-        setIsLoading(false)
-        setFetchError(false)
-        // extract entries for sidebar
-        const entries = data.fields.description.content
-          .filter((item) =>
-            ['heading-1', 'heading-2', 'heading-3', 'heading-4', 'heading-5', 'heading-6'].includes(item.nodeType)
-          )
-          .map((item) => ({
-            id: item.content[0].value.toLowerCase().replace(/ /g, '-'),
-            title: item.content[0].value,
-          }))
-        setEntries(entries)
+        if (data.length > 0) {
+          // grabbing [0] because it's an id page meaning only 1 item
+          // there will always be one object in the array
+          setContent(data[0])
+          setIsLoading(false)
+          setFetchError(false)
+
+          if (data[0].fields.description.content.length > 0) {
+            const entries = data[0].fields.description.content
+              .filter((item) =>
+                ['heading-1', 'heading-2', 'heading-3', 'heading-4', 'heading-5', 'heading-6'].includes(item.nodeType)
+              )
+              .map((item) => ({
+                id: item.content[0]?.value.toLowerCase().replace(/ /g, '-'),
+                title: item.content[0]?.value,
+              }))
+            setEntries(entries)
+          }
+        }
       })
       .catch((err) => {
         console.error(err)
@@ -223,10 +227,6 @@ const ContentPage = () => {
   if (!content) {
     return <div className="flex justify-center items-center h-screen">Something went wrong. Please try again later.</div>
   }
-  {
-    console.log(content[0].fields.title)
-  }
-
   return (
     <div key={content.sys.id}>
       <div className="container mx-auto sm:pt-28 max-sm:pt-14 pb-12" style={{ fontFamily: 'Poppins' }}>
