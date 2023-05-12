@@ -119,7 +119,7 @@ const Releases = () => {
   const [entries, setEntries] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/releases')
+    fetch('/api/releases')
       .then((res) => res.json())
       .then((data) => {
         data.forEach((content) => {
