@@ -7,6 +7,7 @@ import { faApple, faWindows, faLinux, faDocker } from '@fortawesome/free-brands-
 
 // components
 import { CodeBlock, InlineBashCode } from '../components/CodeBlock'
+import InfiniteScroll from '../components/InfiniteScroll'
 
 // utils
 import { scrollToSection } from '../utils/scroll'
@@ -53,6 +54,11 @@ const Community = () => {
           within Docker. Once installed, the <InlineBashCode code={'mongo'} /> command is a single executable which can be used to
           backup, interact with, and run MongoDB server instances.
         </p>
+        <div className="grid grid-cols-1 mt-20">
+          <div className="col-span-1 m-auto">
+            <InfiniteScroll />
+          </div>
+        </div>
       </div>
       <div className="sm:text-center max:sm-text-left lg:w-8/12 m-auto mt-32">
         <p className="font-bold md:text-2xl max-sm:text-2xl max-lg:text-2xl lg:w-11/12 text-white inline-block text-transparent bg-clip-text">
