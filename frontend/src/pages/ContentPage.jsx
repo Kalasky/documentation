@@ -162,6 +162,8 @@ const ContentPage = () => {
         if (data.length > 0) {
           // grabbing [0] because it's an id page meaning only 1 item
           // there will always be one object in the array
+          console.log(data[0])
+          console.log('main content', data)
           setContent(data[0])
           setIsLoading(false)
           setFetchError(false)
