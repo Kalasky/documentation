@@ -2,6 +2,6 @@
   "rewrites": [
     { "source": "/api/blog/:id*", "destination": "/api/blog?id=:id*" },
     { "source": "/api/docs/:id*", "destination": "/api/docs?id=:id*" },
-    { "source": "/api/releases/:id*", "destination": "/api/releases?id=:id*" },
-    ]
+    { "source": "/api/releases/:id*", "destination": "/api/releases?id=:id*" }
+  ]
 }
