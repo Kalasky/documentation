@@ -55,7 +55,7 @@ const Community = () => {
           backup, interact with, and run MongoDB server instances.
         </p>
         <div className="grid grid-cols-1 mt-20">
-          <div className="col-span-1 m-auto">
+          <div className="col-span-1 sm:m-auto">
             <InfiniteScroll />
           </div>
         </div>
