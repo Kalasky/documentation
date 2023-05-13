@@ -160,24 +160,24 @@ const ContentPage = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 0) {
-          // grabbing [0] because it's an id page meaning only 1 item
-          // there will always be one object in the array
-          console.log(data[0])
-          console.log('main content', data)
-          setContent(data[0])
-          setIsLoading(false)
-          setFetchError(false)
+          // find the post with the matching id
+          const post = data.find((post) => post.sys.id === id)
+          if (post) {
+            setContent(post)
+            setIsLoading(false)
+            setFetchError(false)
 
-          if (data[0].fields.description.content.length > 0) {
-            const entries = data[0].fields.description.content
-              .filter((item) =>
-                ['heading-1', 'heading-2', 'heading-3', 'heading-4', 'heading-5', 'heading-6'].includes(item.nodeType)
-              )
-              .map((item) => ({
-                id: item.content[0]?.value.toLowerCase().replace(/ /g, '-'),
-                title: item.content[0]?.value,
-              }))
-            setEntries(entries)
+            if (post.fields.description.content.length > 0) {
+              const entries = post.fields.description.content
+                .filter((item) =>
+                  ['heading-1', 'heading-2', 'heading-3', 'heading-4', 'heading-5', 'heading-6'].includes(item.nodeType)
+                )
+                .map((item) => ({
+                  id: item.content[0]?.value.toLowerCase().replace(/ /g, '-'),
+                  title: item.content[0]?.value,
+                }))
+              setEntries(entries)
+            }
           }
         }
       })
@@ -186,7 +186,6 @@ const ContentPage = () => {
         setFetchError(true)
       })
   }
-
   useEffect(() => {
     const timer = setTimeout(() => {
       if (isLoading) {
